@@ -10,7 +10,7 @@ import org.junit.Test;
 public class CompareSortsTest {
 
     private int[] data;
-    private static final int NUM = 50000;
+    private static final int NUM = 5000;
 
     @Before
     public void setUp() {
