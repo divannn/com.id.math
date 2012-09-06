@@ -1,5 +1,8 @@
 package com.id.math.prime;
 
+import com.id.math.util.ArrayUtils;
+import com.sun.deploy.util.ArrayUtil;
+
 import java.util.Arrays;
 
 /**
@@ -12,10 +15,7 @@ public class PrimeNumbers {
 
 	public static void main(String[] args) {
 		int[] primes = findPrimeNumbers(MAX);
-		//print.
-		for (int primeNumber : primes) {
-			System.err.print(primeNumber + " ");
-		}
+        ArrayUtils.printArray(primes);
 	}
 
 	private static int[] findPrimeNumbers(int limit) {
