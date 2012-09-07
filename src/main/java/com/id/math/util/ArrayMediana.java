@@ -17,7 +17,7 @@ public class ArrayMediana {
 
     public static void main(String[] args) {
         int[] date = {};
-        System.err.println("mediana: " + findMediana());
+       // System.err.println("mediana: " + findMediana());
     }
 
     private static int findMediana(int[] data) {
