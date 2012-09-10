@@ -16,8 +16,8 @@ package com.id.math.util;
 public class ArrayMediana {
 
     public static void main(String[] args) {
-        int[] date = {};
-       // System.err.println("mediana: " + findMediana());
+        int[] data = {1,2,3,4,5,6,7,8,9};
+        System.err.println("mediana: " + findMediana(data));
     }
 
     private static int findMediana(int[] data) {
