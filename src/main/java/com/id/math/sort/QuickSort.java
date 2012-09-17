@@ -11,8 +11,7 @@ import com.id.math.util.ArrayUtils;
 public class QuickSort extends AbstractSort {
 
     public int[] sort(int[] d) {
-        //data = ArrayUtils.copy(d);
-        data = new int[] {3,2,1};
+        data = ArrayUtils.copy(d);
         quickSort(0, data.length - 1);
         return data;
     }
