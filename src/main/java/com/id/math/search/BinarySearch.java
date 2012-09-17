@@ -3,8 +3,8 @@ package com.id.math.search;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] data = {1, 30, -5, 6, 8, 4, 64, 6, 8, 0, 2, 4, 3};
-        int ind = binarySearch(data, 61);
+        int[] data = {-2,1,2,4,5};
+        int ind = binarySearch(data, 2);
         System.err.println(">>> ind:  " + ind);
     }
 
@@ -14,9 +14,9 @@ public class BinarySearch {
         }
         int left = 0;
         int right = array.length;
-        int middle = (left + right) / 2;
 
         while (true) {
+            int middle = (left + right) / 2;
             if (array[middle] == target)   {
                 return middle;
             }
@@ -27,12 +27,8 @@ public class BinarySearch {
 
             if (array[middle] < target) {
                 left = middle;
-                middle = (left + right) / 2;
-            }
-
-            if (array[middle] > target) {
+            } else if (array[middle] > target) {
                 right = middle;
-                middle = (left + right) / 2;
             }
         }
     }

@@ -13,6 +13,7 @@ package com.id.math.util;
 Их сумма: 17 + 21 = 38
 Медиана данного ряда: 38 / 2 = 19
 Вот и вся медиана.*/
+    //TODO finish!
 public class ArrayMediana {
 
     public static void main(String[] args) {

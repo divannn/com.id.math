@@ -1,5 +1,7 @@
 package com.id.math.fibo;
 
+import sun.rmi.runtime.NewThreadAction;
+
 /**
  * @author idanilov
  */
@@ -29,6 +31,9 @@ public class FibonacchiNumbers {
      */
     private static long fib1(long n) {
         counter++;
+        if (n <= 0) {
+            throw new IllegalArgumentException("value must > 0");
+        }
         if (n <= 2) {
             return 1;
         }

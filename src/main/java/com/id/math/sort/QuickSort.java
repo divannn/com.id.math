@@ -11,7 +11,8 @@ import com.id.math.util.ArrayUtils;
 public class QuickSort extends AbstractSort {
 
     public int[] sort(int[] d) {
-        data = ArrayUtils.copy(d);
+        //data = ArrayUtils.copy(d);
+        data = new int[] {3,2,1};
         quickSort(0, data.length - 1);
         return data;
     }
@@ -26,7 +27,7 @@ public class QuickSort extends AbstractSort {
             while ((i < mid) && (data[i] <= data[mid])) {
                 i++;
             }
-            while ((j > mid) && (data[mid] <= data[j])) {
+            while ((j > mid) && (data[j] >= data[mid])) {
                 j--;
             }
             if (i < j) {
