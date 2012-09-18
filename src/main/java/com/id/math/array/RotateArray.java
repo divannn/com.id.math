@@ -1,4 +1,4 @@
-package com.id.math.search;
+package com.id.math.array;
 
 import com.id.math.util.ArrayUtils;
 

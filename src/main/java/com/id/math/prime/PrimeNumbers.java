@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class PrimeNumbers {
 
-	final static int MAX = 50;//range to search.
+	final static int MAX = 50;//range to array.
 
 	public static void main(String[] args) {
 		int[] primes = findPrimeNumbers(MAX);
