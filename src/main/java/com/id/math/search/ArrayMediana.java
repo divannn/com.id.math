@@ -1,4 +1,4 @@
-package com.id.math.util;
+package com.id.math.search;
 
 /**
  * Дан массив int a[n], найти его медиану (т.е. такое число, что половина элементов массива имеют
