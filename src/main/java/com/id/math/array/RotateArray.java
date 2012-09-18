@@ -1,6 +1,7 @@
 package com.id.math.array;
 
 import com.id.math.util.ArrayUtils;
+import com.id.math.util.GCD;
 
 /**
  * Rotate array to the left cyclically.
@@ -52,7 +53,7 @@ public class RotateArray {
         }
         int n = array.length;
         int i, j, k, temp;
-        for (i = 0; i < gcd(shift, n); i++) {
+        for (i = 0; i < GCD.gcd(shift, n); i++) {
             /* move i-th values of blocks */
             temp = array[i];
             j = i;
@@ -71,12 +72,4 @@ public class RotateArray {
         }
     }
 
-    /*Function to get GCD of a and b*/
-    private static int gcd(int a, int b) {
-        if (b == 0) {
-            return a;
-        } else {
-            return gcd(b, a % b);
-        }
-    }
 }
