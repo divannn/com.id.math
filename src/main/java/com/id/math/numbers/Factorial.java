@@ -1,4 +1,4 @@
-package com.id.math.factorial;
+package com.id.math.numbers;
 
 import java.math.BigInteger;
 
@@ -18,7 +18,7 @@ public class Factorial {
 	//BigInteger solution.
 	private static void factorial1() {
 		//BigInteger solution.
-		System.out.println("good factorial for n = " + NUM);
+		System.out.println("good numbers for n = " + NUM);
 		BigInteger n = BigInteger.ONE;
 		for (int i = 1; i <= NUM; i++) {
 			n = n.multiply(BigInteger.valueOf(i));
@@ -28,7 +28,7 @@ public class Factorial {
 
 	//int solution (BAD IDEA BECAUSE ONLY WORKS TO 12).
 	private static void factorial2() {
-		System.out.println("bad factorial for n = " + NUM);
+		System.out.println("bad numbers for n = " + NUM);
 		int fact = 1;
 		for (int i = 1; i <= NUM; i++) {
 			fact = fact * i;

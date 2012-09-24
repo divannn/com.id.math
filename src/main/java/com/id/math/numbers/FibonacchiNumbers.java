@@ -1,6 +1,4 @@
-package com.id.math.factorial;
-
-import sun.rmi.runtime.NewThreadAction;
+package com.id.math.numbers;
 
 /**
  * @author idanilov

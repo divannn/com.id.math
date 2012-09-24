@@ -1,7 +1,6 @@
-package com.id.math.factorial;
+package com.id.math.numbers;
 
 import com.id.math.util.ArrayUtils;
-import com.sun.deploy.util.ArrayUtil;
 
 import java.util.Arrays;
 
