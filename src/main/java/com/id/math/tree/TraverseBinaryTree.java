@@ -23,7 +23,7 @@ public class TraverseBinaryTree {
 
     private static void printPreOrder(BinaryTreeNode root) {
         if (root != null) {
-            System.err.print(root.value);
+            System.err.print(root.data);
             printPreOrder(root.left);
             printPreOrder(root.right);
         }
@@ -33,14 +33,14 @@ public class TraverseBinaryTree {
         if (root != null) {
             printTreePostOrder(root.left);
             printTreePostOrder(root.right);
-            System.err.print(root.value);
+            System.err.print(root.data);
         }
     }
 
     private static void printTreeInOrder(BinaryTreeNode root) {
         if (root != null) {
             printTreeInOrder(root.left);
-            System.err.print(root.value);
+            System.err.print(root.data);
             printTreeInOrder(root.right);
         }
     }
@@ -65,10 +65,10 @@ public class TraverseBinaryTree {
                 arr = new ArrayList();
                 l.put(new Integer(depth), arr);
             }
-            arr.add(root.value);
+            arr.add(root.data);
 
             xxx(root.left, depth);
-            System.err.println(root.value + "   " + depth);
+            System.err.println(root.data + "   " + depth);
             xxx(root.right, depth);
         }
     }
@@ -76,7 +76,7 @@ public class TraverseBinaryTree {
     private static void yyy(BinaryTreeNode root, int depth) {
         if (root != null) {
             xxx(root.left, depth);
-            System.err.println(root.value + "   " + depth);
+            System.err.println(root.data + "   " + depth);
             xxx(root.right, depth);
 
         }

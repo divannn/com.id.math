@@ -5,10 +5,10 @@ public class BinaryTreeNode<T> {
 	BinaryTreeNode left;
 	BinaryTreeNode right;
 	BinaryTreeNode parent;
-	T value;
+	T data;
 
 	public BinaryTreeNode(T v) {
-		value = v;
+		data = v;
 	}
 
 }
