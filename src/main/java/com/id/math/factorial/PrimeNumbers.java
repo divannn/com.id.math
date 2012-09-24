@@ -1,4 +1,4 @@
-package com.id.math.prime;
+package com.id.math.factorial;
 
 import com.id.math.util.ArrayUtils;
 import com.sun.deploy.util.ArrayUtil;

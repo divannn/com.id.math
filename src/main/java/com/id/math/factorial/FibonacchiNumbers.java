@@ -1,4 +1,4 @@
-package com.id.math.fibo;
+package com.id.math.factorial;
 
 import sun.rmi.runtime.NewThreadAction;
 
