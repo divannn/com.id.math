@@ -1,4 +1,4 @@
-package com.id.math.util;
+package com.id.math.numbers;
 
 public class GCD {
 

@@ -1,7 +1,7 @@
 package com.id.math.array;
 
 import com.id.math.util.ArrayUtils;
-import com.id.math.util.GCD;
+import com.id.math.numbers.GCD;
 
 /**
  * Rotate array to the left cyclically.
