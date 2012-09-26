@@ -1,7 +1,7 @@
 package com.id.math.numbers;
 
 /**
- * Finds Greatest Common Divisor - Наибольший Общий Делитель.
+ * Greatest Common Divisor - Наибольший Общий Делитель.
  */
 public class GCD {
 
@@ -10,7 +10,7 @@ public class GCD {
     }
 
     /**
-     * Via division.
+     * Via division. Same as gcd2 but faster.
      */
     public static int gcd(int a, int b) {
         while (a != 0 && b != 0) {
