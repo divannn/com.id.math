@@ -7,6 +7,7 @@ public class LCM {
         System.err.println("> " + lcm(8,10));
     }
 
+    //HOД(a,b)*HOK(a,b) = a*b.
     public  static int lcm(int a, int b) {
         int gcd = GCD.gcd(a,b);
         return a*b/gcd;
