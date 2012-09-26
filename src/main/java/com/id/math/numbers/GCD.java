@@ -6,7 +6,7 @@ package com.id.math.numbers;
 public class GCD {
 
     public static void main(String[] args) {
-        System.err.println("GCD for 24 and 54 = " + gcd2(24, 54));
+        System.err.println("GCD for 24 and 54 = " + gcd(24, 54));
     }
 
     /**
