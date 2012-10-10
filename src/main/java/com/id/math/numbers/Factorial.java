@@ -8,35 +8,38 @@ import java.math.BigInteger;
 public class Factorial {
 
     public static void main(String[] args) {
-        factorial1(0);
-        factorial2(10);
+        System.err.println("F1: " + factorial1(12));
+        System.err.println("F2: " + factorial2(12));
+        System.err.println("F3: " + factorial3(12));
     }
 
     //BigInteger solution.
-    private static void factorial1(int N) {
+    private static BigInteger factorial1(int N) {
         if (N < 0) {
             throw new IllegalArgumentException("Value must be positive");
         }
         //BigInteger solution.
-        System.out.println("good numbers for n = " + N);
-        BigInteger next = BigInteger.ONE;
+        System.err.println("good numbers for n = " + N);
+        BigInteger result = BigInteger.ONE;
         for (int i = 1; i <= N; i++) {
-            next = next.multiply(BigInteger.valueOf(i));
-            System.out.println(" " + i + "! = " + next);
+            result = result.multiply(BigInteger.valueOf(i));
+            System.err.println(" " + i + "! = " + result);
         }
+        return result;
     }
 
     //int solution (BAD IDEA BECAUSE ONLY WORKS TO 12).
-    private static void factorial2(int N) {
+    private static int factorial2(int N) {
         if (N < 0) {
             throw new IllegalArgumentException("Value must be positive");
         }
-        System.out.println("bad numbers for n = " + N);
-        int fact = 1;
+        System.err.println("bad numbers for n = " + N);
+        int result = 1;
         for (int i = 1; i <= N; i++) {
-            fact = fact * i;
-            System.out.println(" " + i + "! = " + fact);
+            result *= i;
+            System.err.println(" " + i + "! = " + result);
         }
+        return result;
     }
 
     //recursive way(also BAD).
