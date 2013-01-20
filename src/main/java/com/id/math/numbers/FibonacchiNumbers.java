@@ -45,9 +45,8 @@ public class FibonacchiNumbers {
     private static long fib2(long n) {
         long f1 = 1;
         long f2 = 1;
-        long tmp = 0;
         for (int i = 3; i <= n; i++) {
-            tmp = f2;
+            long tmp = f2;
             f2 = f1 + f2;
             f1 = tmp;
         }
