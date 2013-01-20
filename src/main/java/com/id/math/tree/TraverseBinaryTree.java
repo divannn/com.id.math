@@ -1,8 +1,5 @@
 package com.id.math.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-
 public class TraverseBinaryTree {
 
     public static void main(String[] args) {
@@ -45,16 +42,7 @@ public class TraverseBinaryTree {
         }
     }
 
-    private static int depth(BinaryTreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        if (root.left == null && root.right == null) {
-            return 1;
-        }
-        return 1 + Math.max(depth(root.left), depth(root.right));
-    }
-
+    /*
     static LinkedHashMap<Integer, ArrayList> l = new LinkedHashMap<Integer, ArrayList>();
 
     private static void xxx(BinaryTreeNode root, int depth) {
@@ -80,9 +68,9 @@ public class TraverseBinaryTree {
             xxx(root.right, depth);
 
         }
-    }
+    }*/
 
-    private static BinaryTreeNode createTree() {
+    private static BinaryTreeNode<Integer> createTree() {
         BinaryTreeNode root = new BinaryTreeNode<Integer>(1);
         BinaryTreeNode n2 = new BinaryTreeNode<Integer>(2);
         BinaryTreeNode n3 = new BinaryTreeNode<Integer>(3);

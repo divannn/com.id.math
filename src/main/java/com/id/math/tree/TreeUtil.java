@@ -10,4 +10,14 @@ public final class TreeUtil {
         return curr;
     }
 
+    public static int depth(BinaryTreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return 1 + Math.max(depth(root.left), depth(root.right));
+    }
+
 }
