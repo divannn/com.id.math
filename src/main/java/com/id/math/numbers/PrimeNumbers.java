@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class PrimeNumbers {
 
-	final static int MAX = 50;//range to array.
+	final static int MAX = 50;
 
 	public static void main(String[] args) {
 		int[] primes = findPrimeNumbers(MAX);
@@ -21,7 +21,7 @@ public class PrimeNumbers {
 		int[] sieve = new int[limit];
 		sieve[0] = 2;//first element is 2.
 		int sieveSize = 1;//size of sieve.
-		for (int i = 3; i <= MAX; i += 2) {//optimization - step with 2 (filter all even elements after 2).
+		for (int i = 3; i <= limit; i += 2) {//optimization - step with 2 (filter all even elements after 2).
 			boolean isPrime = true;
 			for (int j = 0; j < sieveSize; j++) {
 				if (i % sieve[j] == 0) {
