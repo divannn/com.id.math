@@ -10,12 +10,14 @@ import java.util.Scanner;
 public class InversionCount {
 
     public static void main(String[] args) throws FileNotFoundException {
-        int[] ints = readInts(InversionCount.class.getResourceAsStream("ints.txt"));
+        int[] ints =
+                //readInts(InversionCount.class.getResourceAsStream("ints.txt"));
+                readInts(InversionCount.class.getResourceAsStream("IntegerArray.txt"));
         System.err.println(">> " + Arrays.toString(ints));
     }
 
     private static int[] readInts(InputStream is) throws FileNotFoundException {
-        final int N = 10;
+        final int N = 1000;
         int[] result = new int[N];
         Scanner s = new Scanner(is);
         int i = 0;
