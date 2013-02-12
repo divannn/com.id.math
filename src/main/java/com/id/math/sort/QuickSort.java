@@ -35,7 +35,7 @@ public class QuickSort extends AbstractSort {
     private static int partition(int[] a, int lo, int hi) {
         int i = lo;
         int j = hi + 1;
-        int pivot = a[lo];
+        int pivot = a[lo];//just take 1st item.
         while (i < j) {
             // find item on lo to swap
             while ((a[++i] < pivot)) {
