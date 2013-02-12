@@ -10,36 +10,53 @@ import com.id.math.util.ArrayUtils;
  */
 public class QuickSort extends AbstractSort {
 
-    public int[] sort(int[] d) {
-        data = ArrayUtils.copy(d);
-        quickSort(0, data.length - 1);
-        return data;
+    // quicksort the array
+    public int[] sort(int[] a) {
+        sort(a, 0, a.length - 1);
+        return a;
     }
 
-    private void quickSort(int start, int end) {
-        if (start >= end) {
+    // quicksort the subarray from a[lo] to a[hi]
+    private static void sort(int[] a, int lo, int hi) {
+        if (hi <= lo) {
             return;
         }
-        int i = start, j = end;
-        int mid = (i + j) / 2;
+        int pivot_pos = partition(a, lo, hi);
+        sort(a, lo, pivot_pos - 1);
+        sort(a, pivot_pos + 1, hi);
+    }
+
+    /**
+     * partition the subarray a[lo .. hi] by returning an index j
+     * so that a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
+     *
+     * @return pivot position
+     */
+    private static int partition(int[] a, int lo, int hi) {
+        int i = lo;
+        int j = hi + 1;
+        int pivot = a[lo];
         while (i < j) {
-            while ((i < mid) && (data[i] <= data[mid])) {
-                i++;
+            // find item on lo to swap
+            while ((a[++i] < pivot)) {
+                if (i == hi) break;
             }
-            while ((j > mid) && (data[j] >= data[mid])) {
-                j--;
+            // find item on hi to swap
+            while (pivot < a[--j]) {
+                if (j == lo) break;      // redundant since a[lo] acts as sentinel
             }
+
+            // check if pointers cross
             if (i < j) {
-                ArrayUtils.swap(data, i, j);
-                if (i == mid) {
-                    mid = j;
-                } else if (j == mid) {
-                    mid = i;
-                }
+                ArrayUtils.swap(a, i, j);
             }
         }
-        quickSort(start, mid);
-        quickSort(mid + 1, end);
+
+        // put pivot = a[j] into position
+        ArrayUtils.swap(a, lo, j);
+
+        // with a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
+        return j;
     }
 
     public static void main(String[] args) {
