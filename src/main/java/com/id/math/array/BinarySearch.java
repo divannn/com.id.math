@@ -6,26 +6,23 @@ public class BinarySearch {
         int[] data = {-2, 1, 2, 4, 5};
         int ind = binarySearch(data, 2);
         System.err.println(">>> ind :  " + ind);
-        int ind2 = binarySearch2(data, 2, 0, data.length - 1);
+        int ind2 = binarySearch2(data, 12, 0, data.length - 1);
         System.err.println(">>> ind2:  " + ind2);
     }
+
 
     public static int binarySearch(int[] array, int target) {
         if (array == null) {
             return -1;
         }
         int left = 0;
-        int right = array.length;
-
+        int right = array.length - 1;
         while (left <= right) {
-            int middle = (left + right) / 2;
-            if (left == middle || right == middle) {
-                return -1;
-            }
+            int middle = left + (right - left) / 2;
             if (array[middle] < target) {
-                left = middle;
+                left = middle + 1;
             } else if (array[middle] > target) {
-                right = middle;
+                right = middle - 1;
             } else {
                 return middle;
             }
@@ -41,15 +38,11 @@ public class BinarySearch {
         if (left > right) {
             return -1;
         }
-        int middle = (left + right) / 2;
-        if (left == middle || right == middle) {
-            return -1;
-        }
-
+        int middle = left + (right - left) / 2;
         if (array[middle] < target) {
-            left = middle;
+            left = middle + 1;
         } else if (array[middle] > target) {
-            right = middle;
+            right = middle - 1;
         } else {
             return middle;
         }
