@@ -1,12 +1,19 @@
 package com.id.math.cursera_algo1;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Scanner;
+
+/**
+ * Counts inversions for devide and conquer algorithm.
+ *
+ * @author idanilov
+ *         <p/>
+ *         Correct answers are:
+ *         2407905288
+ */
 
 public class InversionCount {
 
