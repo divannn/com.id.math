@@ -12,23 +12,23 @@ import java.util.Scanner;
  *         Correct answers are:
  *         162085 - first
  *         164123 - last
- *         138382 - median of fist-middle-last
+ *         138382 - median of first-middle-last
  */
-public class QS {
+public class QSComparisonCount {
 
     public static void main(String[] args) throws FileNotFoundException {
         //int[] ints = {2, 8, 9, 3, 7, 5, 10, 1, 6, 4};
         QSort qs = new QSort();
 
-        int[] ints = readInts(QS.class.getResourceAsStream("QuickSort.txt"));
+        int[] ints = readInts(QSComparisonCount.class.getResourceAsStream("QuickSort.txt"));
         //System.err.println(">> " + Arrays.toString(ints));
-        qs.sort(ints, QSort.PIVOT_STARTEGY.FIRST);
+        qs.sort(ints, QSort.PIVOT_STRATEGY.FIRST);
         System.err.println("Comparison count = " + qs.count);
-        ints = readInts(QS.class.getResourceAsStream("QuickSort.txt"));
-        qs.sort(ints, QSort.PIVOT_STARTEGY.LAST);
+        ints = readInts(QSComparisonCount.class.getResourceAsStream("QuickSort.txt"));
+        qs.sort(ints, QSort.PIVOT_STRATEGY.LAST);
         System.err.println("Comparison count = " + qs.count);
-        ints = readInts(QS.class.getResourceAsStream("QuickSort.txt"));
-        qs.sort(ints, QSort.PIVOT_STARTEGY.MEDIAN);
+        ints = readInts(QSComparisonCount.class.getResourceAsStream("QuickSort.txt"));
+        qs.sort(ints, QSort.PIVOT_STRATEGY.MEDIAN);
         System.err.println("Comparison count = " + qs.count);
     }
 
