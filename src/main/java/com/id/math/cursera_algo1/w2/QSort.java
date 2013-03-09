@@ -5,8 +5,6 @@ import com.id.math.util.ArrayUtils;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n*n), in worse case : O(n*ln(n)).
- * @stable false
  */
 class QSort {
 
@@ -72,9 +70,8 @@ class QSort {
 		return i - 1;
 	}
 
-	//return index of median among 2 items.
+	//return index of median among 3 items.
 	private static int findMedian(int[] a, int lo, int hi) {
-		//int mid = lo + (hi - lo)/2;
 		int mid_ind = (hi + lo) / 2;
 		/*System.err.println("------------------");
 				for (int i = 0; i < a.length; i++) {
@@ -96,6 +93,5 @@ class QSort {
 				System.err.println("          med = " + a[r]);*/
 		return result;
 	}
-
 
 }
