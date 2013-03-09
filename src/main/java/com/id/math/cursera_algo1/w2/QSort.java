@@ -1,4 +1,4 @@
-package com.id.math.cursera_algo1;
+package com.id.math.cursera_algo1.w2;
 
 
 import com.id.math.util.ArrayUtils;

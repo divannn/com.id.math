@@ -1,4 +1,4 @@
-package com.id.math.cursera_algo1;
+package com.id.math.cursera_algo1.w1;
 
 
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Counts inversions for devide and conquer algorithm.
+ * Counts inversions for divide and conquer algorithm.
  *
  * @author idanilov
  *         <p/>
@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class InversionCount {
 
     public static void main(String[] args) throws FileNotFoundException {
-        int[] ints = readInts(InversionCount.class.getResourceAsStream("IntegerArray.txt"));
+        int[] ints = readInts(InversionCount.class.getResourceAsStream("IntegerArray.txt"), 100000);
         /*for (int i = 0; i < ints.length; i++) {
            ints[i] = ints[i]/1000;
         }*/
@@ -39,8 +39,7 @@ public class InversionCount {
         return result;
     }
 
-    private static int[] readInts(InputStream is) {
-        final int N = 100000;
+    private static int[] readInts(InputStream is, int N) {
         int[] result = new int[N];
         Scanner s = new Scanner(is);
         int i = 0;
