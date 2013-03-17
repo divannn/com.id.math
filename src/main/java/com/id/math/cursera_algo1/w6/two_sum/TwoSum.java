@@ -47,7 +47,7 @@ public class TwoSum {
 	}
 
 	//too long - don't call.
-	private static int brute_force(int[] ints, int[] toVerify) {
+	private static int bruteForce(int[] ints, int[] toVerify) {
 		HashSet<Integer> set = new HashSet<Integer>(10000);//to count distinct 2sum.
 		for (int next2Verify : toVerify) {
 			//System.err.println("t = " + next2Verify);
