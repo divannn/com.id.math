@@ -1,4 +1,4 @@
-package com.id.math.cursera_algo1.w6;
+package com.id.math.cursera_algo1.w6.two_sum;
 
 
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 /**
- * 1477
+ * Answer: 1477
  */
 public class TwoSum {
 
