@@ -47,7 +47,7 @@ public class GCD {
         if (b == 0) {
             return a;
         } else {
-            return gcd(b, a % b);
+            return gcd3(b, a % b);
         }
     }
 
