@@ -49,7 +49,7 @@ public final class ArrayUtils {
 	 * @param data
 	 * @param l left index inclusive
 	 * @param r right index exclusive
-	 * @return index of miminal element in array
+	 * @return index of minimal element in array
 	 */
 	public static int minIndex(int[] data, int l, int r) {
 		checkParams(data, l, r);
