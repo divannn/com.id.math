@@ -16,7 +16,7 @@ public class QuickSort extends AbstractSort {
         return a;
     }
 
-    // quicksort the subarray from a[lo] to a[hi]
+    // quicksort the sub-array from a[lo] to a[hi]
     private static void sort(int[] a, int lo, int hi) {
         if (hi <= lo) {
             return;
@@ -27,7 +27,7 @@ public class QuickSort extends AbstractSort {
     }
 
     /**
-     * partition the subarray a[lo .. hi] by returning an index j
+     * partition the sub-array a[lo .. hi] by returning an index j
      * so that a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
      *
      * @return pivot position
