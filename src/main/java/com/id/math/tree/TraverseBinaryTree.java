@@ -4,10 +4,11 @@ public class TraverseBinaryTree {
 
     public static void main(String[] args) {
         BinaryTreeNode<Integer> tree = createTree();
+        System.err.println("\npre-order:");
         printPreOrder(tree);
-        System.err.println();
+        System.err.println("\npost-order:");
         printTreePostOrder(tree);
-        System.err.println();
+        System.err.println("\nin-order:");
         printTreeInOrder(tree);
 
         //int depth = depth(tree);
