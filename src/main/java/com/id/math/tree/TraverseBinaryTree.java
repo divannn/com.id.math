@@ -72,12 +72,12 @@ public class TraverseBinaryTree {
     }*/
 
     private static BinaryTreeNode<Integer> createTree() {
-        BinaryTreeNode root = new BinaryTreeNode<Integer>(1);
-        BinaryTreeNode n2 = new BinaryTreeNode<Integer>(2);
-        BinaryTreeNode n3 = new BinaryTreeNode<Integer>(3);
-        BinaryTreeNode n4 = new BinaryTreeNode<Integer>(4);
-        BinaryTreeNode n5 = new BinaryTreeNode<Integer>(5);
-        BinaryTreeNode n6 = new BinaryTreeNode<Integer>(6);
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
+        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(2);
+        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(3);
+        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(4);
+        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(5);
+        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(6);
 
         root.left = n2;
         root.right = n3;
