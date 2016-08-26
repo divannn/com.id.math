@@ -1,7 +1,5 @@
 package com.id.math.tree;
 
-import java.util.LinkedList;
-
 public class TreeSearch {
 
     /**
