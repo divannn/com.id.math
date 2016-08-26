@@ -11,8 +11,9 @@ public class IsSameTreeCheck {
      * 2- If they are both NULL, it means we have successfully finished the traversal and the trees are the identical.
      * 3- If one is NULL and the other is not, then the trees are structurally different and we need to return false.
      * 4- If they are both not empty, we compare the values and recurse for both left and right children if the values are equal.
-     *
+     * <p>
      * Time complexity: O(min(N, M)), where N and M are the number of nodes for the trees. At the worst case, we will process all the nodes in the smaller tree.
+     *
      * @param p - tree 1
      * @param q - tree 2
      * @return true if trees are equal
@@ -27,19 +28,18 @@ public class IsSameTreeCheck {
         return false;
     }
 
-
-//    @Test
-//    public void test1() {
-//        BinaryTreeNode<Integer> t1 = createTree();
-//        BinaryTreeNode<Integer> t2 = createTree();
-//        Assert.assertTrue(isSameTree(t1, t2));
-//    }
+    @Test
+    public void testEqual() {
+        BinaryTreeNode<Integer> t1 = createTree();
+        BinaryTreeNode<Integer> t2 = createTree();
+        Assert.assertTrue(isSameTree(t1, t2));
+    }
 
     @Test
-    public void test2() {
+    public void testNotEqual() {
         BinaryTreeNode<Integer> t1 = createTree();
         BinaryTreeNode<Integer> t2 = createTree2();
-        Assert.assertTrue(isSameTree(t1, t2));
+        Assert.assertFalse(isSameTree(t1, t2));
     }
 
 
