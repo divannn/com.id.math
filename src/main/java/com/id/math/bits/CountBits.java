@@ -1,4 +1,4 @@
-package com.id.math.tricks;
+package com.id.math.bits;
 
 
 public class CountBits {
