@@ -57,9 +57,9 @@ public class CheckCycle {
         n4.next = n2;
 
         noCycleHead = new ListNode(1);
-        ListNode n22 = new ListNode(2);
-        ListNode n33 = new ListNode(3);
-        ListNode n44 = new ListNode(4);
+        ListNode n22 = new ListNode<>(2);
+        ListNode n33 = new ListNode<>(3);
+        ListNode n44 = new ListNode<>(4);
 
         noCycleHead.next = n22;
         n22.next = n33;
