@@ -1,5 +1,6 @@
 package com.id.math.linkedlist;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,15 +8,31 @@ import static org.junit.Assert.assertEquals;
 public class MthElemFromEnd {
 
 
+    private ListNode<Integer> head;
+
+    @Before
+    public void setUp() {
+        head = createList();
+    }
+
     @Test
-    public void test1() {
-        ListNode<Integer> head = createList();
-        assertEquals(7, getMthElemFromEnd(head, 0).data);
-        assertEquals(6, getMthElemFromEnd(head, 1).data);
-        assertEquals(1, getMthElemFromEnd(head, 6).data);
-        assertEquals(2, getMthElemFromEnd(head, 5).data);
-        assertEquals(null, getMthElemFromEnd(head, 8));
-        assertEquals(null, getMthElemFromEnd(head, 7));
+    public void testIter() {
+        assertEquals(7, getMthElemFromEndIter(head, 0).data);
+        assertEquals(6, getMthElemFromEndIter(head, 1).data);
+        assertEquals(1, getMthElemFromEndIter(head, 6).data);
+        assertEquals(2, getMthElemFromEndIter(head, 5).data);
+        assertEquals(null, getMthElemFromEndIter(head, 8));
+        assertEquals(null, getMthElemFromEndIter(head, 7));
+    }
+
+    @Test
+    public void testRecur() {
+        assertEquals(7, getMthElemFromEndRecursive(head, 0).data);
+        assertEquals(6, getMthElemFromEndRecursive(head, 1).data);
+        assertEquals(1, getMthElemFromEndRecursive(head, 6).data);
+        assertEquals(2, getMthElemFromEndRecursive(head, 5).data);
+        assertEquals(null, getMthElemFromEndRecursive(head, 8));
+        assertEquals(null, getMthElemFromEndRecursive(head, 7));
     }
 
     /**
@@ -23,21 +40,37 @@ public class MthElemFromEnd {
      * @param m    0-based index from the end
      * @return m-th elem from the end of list
      */
-    private static ListNode getMthElemFromEnd(ListNode head, int m) {
+    private static ListNode getMthElemFromEndIter(ListNode head, int m) {
         ListNode curr = head;
-        ListNode res = head;
-        int i = 0;
+        ListNode result = head;
+
+        for (int i = 0; i <= m; i++) {
+            if (curr == null) {
+                return null;//m is out of bounds
+            }
+            curr = curr.next;
+        }
         while (curr != null) {
             curr = curr.next;
-            if (i > m) {
-                res = res.next;
-            }
-            i++;
+            result = result.next;
         }
-        if (i <= m) {
-            res = null;
+        return result;
+    }
+
+    private static ListNode getMthElemFromEndRecursive(ListNode head, int m) {
+        return getMthElemFromEndRecursive(head, m, new Index(-1));
+    }
+
+    private static ListNode getMthElemFromEndRecursive(ListNode head, int m, Index ind) {
+        if (head == null) {
+            return null;
         }
-        return res;
+        ListNode node = getMthElemFromEndRecursive(head.next, m, ind);
+        ind.index++;
+        if (ind.index == m) {
+            return head;
+        }
+        return node;
     }
 
     private static ListNode<Integer> createList() {
@@ -56,5 +89,13 @@ public class MthElemFromEnd {
         n5.next = n6;
         n6.next = n7;
         return head;
+    }
+
+    private static class Index {
+        private int index;
+
+        public Index(int index) {
+            this.index = index;
+        }
     }
 }
