@@ -1,4 +1,4 @@
-package com.id.math.list;
+package com.id.math.linkedlist;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class MthElemFromEnd {
 
     @Test
     public void test1() {
-        Node<Integer> head = createList();
+        ListNode<Integer> head = createList();
         assertEquals(7, getMthElemFromEnd(head, 0).data);
         assertEquals(6, getMthElemFromEnd(head, 1).data);
         assertEquals(1, getMthElemFromEnd(head, 6).data);
@@ -18,9 +18,14 @@ public class MthElemFromEnd {
         assertEquals(null, getMthElemFromEnd(head, 7));
     }
 
-    private static Node getMthElemFromEnd(Node head, int m) {
-        Node curr = head;
-        Node res = head;
+    /**
+     * @param head single-linked list
+     * @param m    0-based index from the end
+     * @return m-th elem from the end of list
+     */
+    private static ListNode getMthElemFromEnd(ListNode head, int m) {
+        ListNode curr = head;
+        ListNode res = head;
         int i = 0;
         while (curr != null) {
             curr = curr.next;
@@ -35,14 +40,14 @@ public class MthElemFromEnd {
         return res;
     }
 
-    private static Node<Integer> createList() {
-        Node head = new Node<>(1);
-        Node n2 = new Node<>(2);
-        Node n3 = new Node<>(3);
-        Node n4 = new Node<>(4);
-        Node n5 = new Node<>(5);
-        Node n6 = new Node<>(6);
-        Node n7 = new Node<>(7);
+    private static ListNode<Integer> createList() {
+        ListNode head = new ListNode<>(1);
+        ListNode n2 = new ListNode<>(2);
+        ListNode n3 = new ListNode<>(3);
+        ListNode n4 = new ListNode<>(4);
+        ListNode n5 = new ListNode<>(5);
+        ListNode n6 = new ListNode<>(6);
+        ListNode n7 = new ListNode<>(7);
 
         head.next = n2;
         n2.next = n3;

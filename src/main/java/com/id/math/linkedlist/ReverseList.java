@@ -1,11 +1,11 @@
-package com.id.math.list;
+package com.id.math.linkedlist;
 
 public class ReverseList {
     public static void main(String[] args) {
-        Node head = new Node<Integer>(1);
-        Node n2 = new Node<Integer>(2);
-        Node n3 = new Node<Integer>(3);
-        Node n4 = new Node<Integer>(4);
+        ListNode head = new ListNode<Integer>(1);
+        ListNode n2 = new ListNode<Integer>(2);
+        ListNode n3 = new ListNode<Integer>(3);
+        ListNode n4 = new ListNode<Integer>(4);
 
         head.next = n2;
         n2.next = n3;
@@ -16,7 +16,7 @@ public class ReverseList {
         print(head);
     }
 
-    private static void print(Node head) {
+    private static void print(ListNode head) {
         while (head != null) {
             System.err.print(head.data + " ");
             head = head.next;
@@ -24,10 +24,10 @@ public class ReverseList {
         System.err.println();
     }
 
-    private static Node reverse(Node head) {
-        Node previous = null;
-        Node current = head;
-        Node next;
+    private static ListNode reverse(ListNode head) {
+        ListNode previous = null;
+        ListNode current = head;
+        ListNode next;
 
         while (current != null) {
             next = current.next;

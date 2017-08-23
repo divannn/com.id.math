@@ -43,10 +43,10 @@ public class WeightedGraph {
 			StringBuilder sb = new StringBuilder();
 			for (int i = 1; i < arr.length; i++) {
 				sb.append(i + " : ");
-				LinkedList<Node> list = arr[i];
-				Iterator<Node> it = list.iterator();
+				LinkedList<ListNode> linkedlist = arr[i];
+				Iterator<ListNode> it = linkedlist.iterator();
 				while (it.hasNext()) {
-					Node n = it.next();
+					ListNode n = it.next();
 					sb.append("(" + n.vertex + "," + n.weight + ")").append(" ");
 				}
 				sb.append("\n\r");
