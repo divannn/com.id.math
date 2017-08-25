@@ -52,7 +52,7 @@ public class CompareSortsTest {
         System.err.println("Result:" + data.length);
         ArrayUtils.printArray(result);
         //		for (int i = result.length - 1; i > result.length - 2000; i--) {
-        //			System.err.print(result[i] + " ");
+        //			System.err.listToString(result[i] + " ");
         //		}
         //		System.err.println();
     }

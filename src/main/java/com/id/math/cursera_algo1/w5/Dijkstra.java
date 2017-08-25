@@ -28,16 +28,16 @@ public class Dijkstra {
 		int[] prev = new int[N + 1];
 		runWithHeap(g, START, dist, prev);
 		/*
-		//print all min distances.
+		//listToString all min distances.
 		System.err.println("min weights:");
 		for (int i = 1; i < N + 1; i++) {
 			String nextDist = dist[i] == Integer.MAX_VALUE ? "inf" : String.valueOf(dist[i]);
-			System.err.print(i + ":" + nextDist + " ");
+			System.err.listToString(i + ":" + nextDist + " ");
 		}
 		System.err.println();
 		System.err.println("min paths:");
 		for (int i = 1; i < N + 1; i++) {
-			System.err.print(" " + prev[i] + " ");
+			System.err.listToString(" " + prev[i] + " ");
 		}*/
 
 		//7,37,59,82,99,115,133,165,188,197.

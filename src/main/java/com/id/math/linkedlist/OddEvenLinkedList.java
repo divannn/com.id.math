@@ -55,8 +55,8 @@ public class OddEvenLinkedList {
             }
         }
 
-        System.err.println("1: " + oddList.print());
-        System.err.println("2: " + evenList.print());
+        System.err.println("1: " + oddList.listToString());
+        System.err.println("2: " + evenList.listToString());
         currOdd.next = evenList;//join odd & even lists.
         return oddList;
     }
@@ -89,19 +89,19 @@ public class OddEvenLinkedList {
     public void test1Node() {
         ListNode n = new ListNode(1);
         ListNode transformed = new OddEvenLinkedList().oddEvenList2(n);
-        assertEquals("1", transformed.print());
+        assertEquals("1", transformed.listToString());
     }
 
     @Test
     public void test2Nodes() {
         ListNode n1 = new ListNode(1);
         ListNode transformed1 = new OddEvenLinkedList().oddEvenList2(n1);
-        assertEquals("1", transformed1.print());
+        assertEquals("1", transformed1.listToString());
 
         ListNode n2 = new ListNode(2);
         n1.next = n2;
         ListNode transformed2 = new OddEvenLinkedList().oddEvenList2(n1);
-        assertEquals("1->2", transformed2.print());
+        assertEquals("1->2", transformed2.listToString());
     }
 
     @Test
@@ -116,10 +116,10 @@ public class OddEvenLinkedList {
         n3.next = n4;
         n4.next = n5;
 
-        System.err.println("initial list: " + n1.print());
+        System.err.println("initial list: " + n1.listToString());
         ListNode transformed = new OddEvenLinkedList().oddEvenList2(n1);
-        System.err.println("transformed list: " + transformed.print());
-        assertEquals("1->3->5->2->4", transformed.print());
+        System.err.println("transformed list: " + transformed.listToString());
+        assertEquals("1->3->5->2->4", transformed.listToString());
     }
 
     @Test
@@ -136,10 +136,10 @@ public class OddEvenLinkedList {
         n4.next = n5;
         n5.next = n6;
 
-        System.err.println("initial list: " + n1.print());
+        System.err.println("initial list: " + n1.listToString());
         ListNode transformed = new OddEvenLinkedList().oddEvenList2(n1);
-        System.err.println("transformed list: " + transformed.print());
-        assertEquals("1->3->5->2->4->6", transformed.print());
+        System.err.println("transformed list: " + transformed.listToString());
+        assertEquals("1->3->5->2->4->6", transformed.listToString());
     }
 }
 

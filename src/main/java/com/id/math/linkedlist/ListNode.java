@@ -8,7 +8,7 @@ public class ListNode<T> {
         this.data = data;
     }
 
-    public String print() {
+    public String listToString() {
         StringBuilder sb = new StringBuilder();
         ListNode curr = this;
         while (curr != null) {
@@ -26,4 +26,29 @@ public class ListNode<T> {
         return String.valueOf(data);
     }
 
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+
+        head.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+
+        System.err.println(head.listToString());
+
+        printReverse(head);
+
+    }
+
+    private static void printReverse(ListNode head) {
+        if (head == null) {
+            return;
+        }
+        printReverse(head.next);
+
+        System.err.println(" " + head);
+    }
 }

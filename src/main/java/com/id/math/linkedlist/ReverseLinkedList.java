@@ -49,7 +49,7 @@ public class ReverseLinkedList {
 
         ListNode<Integer> original = new ListNode(1);
         ListNode<Integer> reversed = ReverseLinkedList.reverseList(original);
-        Assert.assertEquals("1", reversed.print());
+        Assert.assertEquals("1", reversed.listToString());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class ReverseLinkedList {
 
         ListNode<Integer> original = new ListNode(1);
         ListNode<Integer> reversed = ReverseLinkedList.reverseList2(original);
-        Assert.assertEquals("1", reversed.print());
+        Assert.assertEquals("1", reversed.listToString());
     }
 
     @Test
@@ -71,9 +71,9 @@ public class ReverseLinkedList {
         _2.next = _3;
         _3.next = _4;
 
-        String original_str = _1.print();
+        String original_str = _1.listToString();
         ListNode reversed = ReverseLinkedList.reverseList(_1);
-        String reversed_str = reversed.print();
+        String reversed_str = reversed.listToString();
 
         System.err.println(original_str);
         System.err.println(reversed_str);
@@ -92,9 +92,9 @@ public class ReverseLinkedList {
         _2.next = _3;
         _3.next = _4;
 
-        String original_str = _1.print();
+        String original_str = _1.listToString();
         ListNode reversed = ReverseLinkedList.reverseList2(_1);
-        String reversed_str = reversed.print();
+        String reversed_str = reversed.listToString();
 
         System.err.println(original_str);
         System.err.println(reversed_str);
