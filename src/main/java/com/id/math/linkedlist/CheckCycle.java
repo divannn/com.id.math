@@ -11,8 +11,8 @@ import static org.junit.Assert.assertTrue;
 
 public class CheckCycle {
 
-    private ListNode cycleHead;
-    private ListNode noCycleHead;
+    private ListNode<Integer> cycleHead;
+    private ListNode<Integer> noCycleHead;
 
 
     //using storage.
@@ -46,17 +46,17 @@ public class CheckCycle {
 
     @Before
     public void setUp() {
-        cycleHead = new ListNode(1);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(3);
-        ListNode n4 = new ListNode(4);
+        cycleHead = new ListNode<>(1);
+        ListNode n2 = new ListNode<>(2);
+        ListNode n3 = new ListNode<>(3);
+        ListNode n4 = new ListNode<>(4);
 
         cycleHead.next = n2;
         n2.next = n3;
         n3.next = n4;
         n4.next = n2;
 
-        noCycleHead = new ListNode(1);
+        noCycleHead = new ListNode<>(1);
         ListNode n22 = new ListNode<>(2);
         ListNode n33 = new ListNode<>(3);
         ListNode n44 = new ListNode<>(4);
