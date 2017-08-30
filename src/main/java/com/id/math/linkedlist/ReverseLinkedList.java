@@ -53,7 +53,7 @@ public class ReverseLinkedList {
     }
 
     @Test
-    public void testRecusrive1() {
+    public void testRecursive1() {
         Assert.assertEquals(null, ReverseLinkedList.reverseList2(null));
 
         ListNode<Integer> original = new ListNode(1);
@@ -62,7 +62,7 @@ public class ReverseLinkedList {
     }
 
     @Test
-    public void testIterartive2() {
+    public void testIterative2() {
         ListNode<Integer> _1 = new ListNode(1);
         ListNode<Integer> _2 = new ListNode(2);
         ListNode<Integer> _3 = new ListNode(3);
@@ -83,7 +83,7 @@ public class ReverseLinkedList {
 
 
     @Test
-    public void testRecursion2() {
+    public void testRecursive2() {
         ListNode<Integer> _1 = new ListNode<>(1);
         ListNode<Integer> _2 = new ListNode<>(2);
         ListNode<Integer> _3 = new ListNode<>(3);

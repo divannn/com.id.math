@@ -17,12 +17,12 @@ public class MthElemFromEnd {
 
     @Test
     public void testIter() {
-        assertEquals(7, getMthElemFromEndIter(head, 0).data);
-        assertEquals(6, getMthElemFromEndIter(head, 1).data);
-        assertEquals(1, getMthElemFromEndIter(head, 6).data);
-        assertEquals(2, getMthElemFromEndIter(head, 5).data);
-        assertEquals(null, getMthElemFromEndIter(head, 8));
-        assertEquals(null, getMthElemFromEndIter(head, 7));
+        assertEquals(7, getMthElemFromEndIterative(head, 0).data);
+        assertEquals(6, getMthElemFromEndIterative(head, 1).data);
+        assertEquals(1, getMthElemFromEndIterative(head, 6).data);
+        assertEquals(2, getMthElemFromEndIterative(head, 5).data);
+        assertEquals(null, getMthElemFromEndIterative(head, 8));
+        assertEquals(null, getMthElemFromEndIterative(head, 7));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class MthElemFromEnd {
      * @param m    0-based index from the end
      * @return m-th elem from the end of list
      */
-    private static ListNode getMthElemFromEndIter(ListNode head, int m) {
+    private static ListNode getMthElemFromEndIterative(ListNode head, int m) {
         ListNode curr = head;
         ListNode result = head;
 

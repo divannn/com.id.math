@@ -1,7 +1,7 @@
 package com.id.math.linkedlist;
 
 public class ListNode<T> {
-    ListNode next;
+    ListNode<T> next;
     T data;
 
     public ListNode(T data) {
