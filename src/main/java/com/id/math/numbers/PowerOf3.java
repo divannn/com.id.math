@@ -1,7 +1,11 @@
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+package com.id.math.numbers;
+
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+//leetcode
 public class PowerOf3 {
 
     //via multiplication
