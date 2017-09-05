@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author idanilov
  */
-public class FibonacchiNumbers {
+public class FibonacciNumbers {
 
     private static long counter;//num invocations.
 
