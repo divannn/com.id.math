@@ -1,17 +1,27 @@
 package com.id.math.bits;
 
 
-public class PowerOf2 {
-    public static void main(String[] args) {
-        System.err.println("test 8: " + isPowerOf(8));
-        System.err.println("test 67: " + isPowerOf(67));
-    }
+import org.junit.Test;
 
-    public static boolean isPowerOf(int value) {
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+public class PowerOf2 {
+
+    public static boolean isPowerOf2(int value) {
         if (value <= 0) {
             throw new IllegalArgumentException("Invalid arg");
         }
         return (value & value - 1) == 0;
     }
 
+    @Test
+    public void test() {
+        assertTrue(isPowerOf2(1));
+        assertTrue(isPowerOf2(2));
+        assertTrue(isPowerOf2(8));
+        assertTrue(isPowerOf2(1024));
+        assertFalse(isPowerOf2(3));
+        assertFalse(isPowerOf2(62));
+    }
 }
