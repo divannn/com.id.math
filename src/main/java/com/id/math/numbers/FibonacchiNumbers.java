@@ -1,5 +1,9 @@
 package com.id.math.numbers;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * @author idanilov
  */
@@ -24,8 +28,8 @@ public class FibonacchiNumbers {
     /**
      * Bad way. Complexity is 2^n.
      *
-     * @param n number
-     * @return Fibonacci n
+     * @param n number staring from 1
+     * @return nth Fibonacci number
      */
     private static long fib1(long n) {
         counter++;
@@ -39,10 +43,13 @@ public class FibonacchiNumbers {
     }
 
     /**
-     * @param n number
-     * @return Fibonacci n
+     * @param n number staring from 1
+     * @return nth Fibonacci number
      */
     private static long fib2(long n) {
+        if (n <= 0) {
+            return -1;
+        }
         long f1 = 1;
         long f2 = 1;
         for (int i = 3; i <= n; i++) {
@@ -52,4 +59,13 @@ public class FibonacchiNumbers {
         }
         return f2;
     }
+
+    @Test
+    public void test2() {
+        assertEquals(-1,fib2(-1)) ;
+        assertEquals(-1,fib2(0)) ;
+        assertEquals(1,fib2(2)) ;
+        assertEquals(2,fib2(3)) ;
+    }
+
 }
