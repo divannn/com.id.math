@@ -1,15 +1,10 @@
 package com.id.math.array;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class BinarySearch {
-
-    public static void main(String[] args) {
-        int[] data = {-2, 1, 2, 4, 5};
-        int ind = binarySearch(data, 2);
-        System.err.println(">>> ind :  " + ind);
-        int ind2 = binarySearch2(data, 12, 0, data.length - 1);
-        System.err.println(">>> ind2:  " + ind2);
-    }
-
 
     public static int binarySearch(int[] array, int target) {
         if (array == null) {
@@ -18,7 +13,7 @@ public class BinarySearch {
         int left = 0;
         int right = array.length - 1;
         while (left <= right) {
-            int middle = left + (right - left) / 2;
+            int middle = (left + right) / 2;
             if (array[middle] < target) {
                 left = middle + 1;
             } else if (array[middle] > target) {
@@ -31,6 +26,10 @@ public class BinarySearch {
     }
 
     //recursive way.
+    public static int binarySearch2(int[] array, int target) {
+        return binarySearch2(array, target, 0, array.length - 1);
+    }
+
     public static int binarySearch2(int[] array, int target, int left, int right) {
         if (array == null) {
             return -1;
@@ -38,7 +37,7 @@ public class BinarySearch {
         if (left > right) {
             return -1;
         }
-        int middle = left + (right - left) / 2;
+        int middle = (left + right) / 2;
         if (array[middle] < target) {
             left = middle + 1;
         } else if (array[middle] > target) {
@@ -47,6 +46,32 @@ public class BinarySearch {
             return middle;
         }
         return binarySearch2(array, target, left, right);
+    }
+
+    @Test
+    public void testIter() {
+        int[] data = {-2, 1, 2, 4, 5, 7, 7, 11};
+        int ind = binarySearch(data, 2);
+        assertEquals(2, ind);
+
+        int ind2 = binarySearch(data, 15);
+        assertEquals(-1, ind2);
+
+        int ind3 = binarySearch(data, 11);
+        assertEquals(7, ind3);
+    }
+
+    @Test
+    public void testRecur() {
+        int[] data = {-2, 1, 2, 4, 5, 7, 7, 11};
+        int ind = binarySearch2(data, 2);
+        assertEquals(2, ind);
+
+        int ind2 = binarySearch2(data, 15);
+        assertEquals(-1, ind2);
+
+        int ind3 = binarySearch2(data, 11);
+        assertEquals(7, ind3);
     }
 
 }
