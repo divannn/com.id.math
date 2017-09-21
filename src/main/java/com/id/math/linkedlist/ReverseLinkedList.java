@@ -15,7 +15,7 @@ public class ReverseLinkedList {
      * @param head head of list
      * @return head of reversed list
      */
-    private static ListNode reverseList(ListNode head) {
+    private static ListNode reverseListIter(ListNode head) {
         ListNode curr = head;
         ListNode prev = null;
         while (curr != null) {
@@ -33,11 +33,11 @@ public class ReverseLinkedList {
      * @param head head of list
      * @return head of reversed list
      */
-    private static ListNode reverseList2(ListNode head) {
+    private static ListNode reverseListRecur(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode p = reverseList(head.next);
+        ListNode p = reverseListRecur(head.next);
         head.next.next = head;
         head.next = null;
         return p;
@@ -45,19 +45,19 @@ public class ReverseLinkedList {
 
     @Test
     public void testIterative1() {
-        Assert.assertEquals(null, ReverseLinkedList.reverseList(null));
+        Assert.assertEquals(null, ReverseLinkedList.reverseListIter(null));
 
         ListNode<Integer> original = new ListNode(1);
-        ListNode<Integer> reversed = ReverseLinkedList.reverseList(original);
+        ListNode<Integer> reversed = ReverseLinkedList.reverseListIter(original);
         Assert.assertEquals("1", reversed.listToString());
     }
 
     @Test
     public void testRecursive1() {
-        Assert.assertEquals(null, ReverseLinkedList.reverseList2(null));
+        Assert.assertEquals(null, ReverseLinkedList.reverseListRecur(null));
 
         ListNode<Integer> original = new ListNode(1);
-        ListNode<Integer> reversed = ReverseLinkedList.reverseList2(original);
+        ListNode<Integer> reversed = ReverseLinkedList.reverseListRecur(original);
         Assert.assertEquals("1", reversed.listToString());
     }
 
@@ -72,7 +72,7 @@ public class ReverseLinkedList {
         _3.next = _4;
 
         String original_str = _1.listToString();
-        ListNode reversed = ReverseLinkedList.reverseList(_1);
+        ListNode reversed = ReverseLinkedList.reverseListIter(_1);
         String reversed_str = reversed.listToString();
 
         System.err.println(original_str);
@@ -93,7 +93,7 @@ public class ReverseLinkedList {
         _3.next = _4;
 
         String original_str = _1.listToString();
-        ListNode reversed = ReverseLinkedList.reverseList2(_1);
+        ListNode reversed = ReverseLinkedList.reverseListRecur(_1);
         String reversed_str = reversed.listToString();
 
         System.err.println(original_str);
