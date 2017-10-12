@@ -26,17 +26,17 @@ public class ShuffleArray {
     }
 
     @Test
-    public void test0() {
-        int[] data1 = {9, -2, 1, 0, 4, 5};
-        int[] data2 = {9, -2, 1, 0, 4, 5};
-        ArrayUtils.printArray(data1);
-        shuffle(data2);
-        ArrayUtils.printArray(data2);
+    public void test() {
+        int[] arr = {9, -2, 1, 0, 4, 5};
+        int copy[] = Arrays.copyOf(arr, arr.length);
+        ArrayUtils.printArray(arr);
+        shuffle(copy);
+        ArrayUtils.printArray(copy);
 
-        Arrays.sort(data1);
-        Arrays.sort(data2);
-        assertArrayEquals(data1, data2);
-        ArrayUtils.printArray(data2);
+        Arrays.sort(arr);
+        Arrays.sort(copy);
+        assertArrayEquals(arr, copy);
+        ArrayUtils.printArray(copy);
     }
 
 }

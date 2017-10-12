@@ -31,7 +31,7 @@ public class CountBits {
         System.err.println(Integer.toBinaryString(v) + " -> " + countToggledBits2(v));
     }
 
-    /** Naive - shift bits top right on by one.
+    /** Naive - shift bits to the right on by one.
      * O(log2 N) = O(number of digits) */
     public static short countToggledBits1(int value) {
         short result = 0;
