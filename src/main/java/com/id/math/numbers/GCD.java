@@ -1,18 +1,42 @@
 package com.id.math.numbers;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * Greatest Common Divisor - Наибольший Общий Делитель.
  */
 public class GCD {
 
-    public static void main(String[] args) {
-        System.err.println("GCD for 24 and 54 = " + gcd(24, 54));
+    @Test
+    public void test1() {
+        assertEquals(6, gcd1(24, 54));
+        assertEquals(6, gcd2(24, 54));
+        assertEquals(6, gcd3(24, 54));
     }
 
     /**
-     * Via division. Same as gcd2 but faster.
+     * Via subtraction.
+     * Проще сформулировать алгоритм Евклида так: если даны натуральные числа a и b,
+     * пока получается ненулевое число,
+     * по очереди вычитать из большего меньшее, то в результате получится НОД.
      */
-    public static int gcd(int a, int b) {
+    public static int gcd1(int a, int b) {
+        while (a != 0 && b != 0) {
+            if (a >= b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a + b; //one of them is null here.
+    }
+
+    /**
+     * Via division. Same as gcd1 but faster.
+     */
+    public static int gcd2(int a, int b) {
         while (a != 0 && b != 0) {
             if (a >= b) {
                 a = a % b;
@@ -23,22 +47,6 @@ public class GCD {
         return a + b; //one of them is null.
     }
 
-    /**
-     * Via subtraction.
-     * Проще сформулировать алгоритм Евклида так: если даны натуральные числа a и b,
-     * пока получается ненулевое число,
-     * по очереди вычитать из большего меньшее, то в результате получится НОД.
-     */
-    public static int gcd2(int a, int b) {
-        while (a != 0 && b != 0) {
-            if (a >= b) {
-                a = a - b;
-            } else {
-                b = b - a;
-            }
-        }
-        return a + b; //one of them is null here.
-    }
 
     /**
      * Recursive way.
