@@ -12,6 +12,8 @@ public class GCD {
     @Test
     public void test1() {
         assertEquals(6, gcd1(24, 54));
+        assertEquals(5, gcd1(5, 0));
+
         assertEquals(6, gcd2(24, 54));
         assertEquals(6, gcd3(24, 54));
     }
