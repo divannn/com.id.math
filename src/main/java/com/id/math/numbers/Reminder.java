@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * BYW, in java % takes sign of first arg:
+ * BTW, in java % takes sign of first arg:
  * 8%3=2
  * 8%-3=2
  * -8%-3=-2
