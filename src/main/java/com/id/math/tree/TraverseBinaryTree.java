@@ -10,13 +10,6 @@ public class TraverseBinaryTree {
         printTreePostOrder(tree);
         System.err.println("\nin-order:");
         printTreeInOrder(tree);
-
-        //int depth = depth(tree);
-        //System.err.println(">>> " + depth);
-        /*xxx(tree, 0);
-        for (Entry e : l.entrySet()) {
-            System.err.println("level: " + e.getKey() + "  " + e.getValue());
-        }*/
     }
 
     private static void printPreOrder(BinaryTreeNode root) {
@@ -42,34 +35,6 @@ public class TraverseBinaryTree {
             printTreeInOrder(root.right);
         }
     }
-
-    /*
-    static LinkedHashMap<Integer, ArrayList> l = new LinkedHashMap<Integer, ArrayList>();
-
-    private static void xxx(BinaryTreeNode root, int depth) {
-        if (root != null) {
-            depth++;
-            ArrayList arr = l.get(new Integer(depth));
-            if (arr == null) {
-                arr = new ArrayList();
-                l.put(new Integer(depth), arr);
-            }
-            arr.add(root.data);
-
-            xxx(root.left, depth);
-            System.err.println(root.data + "   " + depth);
-            xxx(root.right, depth);
-        }
-    }
-
-    private static void yyy(BinaryTreeNode root, int depth) {
-        if (root != null) {
-            xxx(root.left, depth);
-            System.err.println(root.data + "   " + depth);
-            xxx(root.right, depth);
-
-        }
-    }*/
 
     private static BinaryTreeNode<Integer> createTree() {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);

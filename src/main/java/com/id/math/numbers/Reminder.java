@@ -4,8 +4,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * BYW, in java % takes sign of first arg:
+ * 8%3=2
+ * 8%-3=2
+ * -8%-3=-2
+ * -8%-3=-2
+ */
 public class Reminder {
-
 
     public int getReminder(int n, int divisor) {
         if (divisor <= 0) {
@@ -25,5 +31,12 @@ public class Reminder {
         assertEquals(0, getReminder(21, 7));
         assertEquals(2, getReminder(26, 4));
         assertEquals(0, getReminder(121, 11));
+    }
+
+    public void testJavaReminder() {
+        System.err.println(8 % 3);
+        System.err.println(8 % -3);
+        System.err.println(-8 % 3);
+        System.err.println(-8 % -3);
     }
 }

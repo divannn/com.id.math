@@ -34,7 +34,7 @@ public class CheckCycle {
         ListNode fast = head;
         ListNode slow = head;
 
-        while (fast != null && slow != null && fast.next != null) {
+        while (slow != null && fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {

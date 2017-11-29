@@ -40,7 +40,7 @@ public class TreeSearch {
         if (root == null) {
             return false;
         }
-        LinkedList<BinaryTreeNode> list = new LinkedList<BinaryTreeNode>();
+        LinkedList<BinaryTreeNode> list = new LinkedList<>();
         list.add(root);
         BinaryTreeNode<Integer> current;
         while (list.size() > 0) {
