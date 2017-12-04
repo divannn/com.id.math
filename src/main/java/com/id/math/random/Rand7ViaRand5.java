@@ -6,11 +6,10 @@ import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
 
-public class Rand7ViaRand7 {
+public class Rand7ViaRand5 {
 
     /**
      * Given rand5() implement rand7().
-     * rand5() generates a random number between O and 4 (inclusive),
      */
     public int rand7() {
         while (true) {
@@ -26,6 +25,9 @@ public class Rand7ViaRand7 {
         }
     }
 
+    /**
+     * @return random numbers from 0 to 4
+     */
     private int rand5() {
         Random r = new Random();
         return r.nextInt(5);
