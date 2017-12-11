@@ -6,13 +6,12 @@ import java.util.function.Predicate;
 
 import static org.junit.Assert.assertEquals;
 
-public class RemoveItemsFromArray {
+public class RemoveArbitraryItems {
 
     /**
      * Removes items from array in-place. Keeps order.
-     * After removal filtered items are in the end of array.
      *
-     * @param arr    source array
+     * @param arr source array
      * @param remove true if item should be deleted
      * @return new size of array
      */
@@ -20,13 +19,13 @@ public class RemoveItemsFromArray {
         if (arr == null) {
             throw new IllegalArgumentException("null array");
         }
-        int last = -1;//index of last valid (that should remain in array)
+        int last = -1;//index of last valid item(that should remain in array)
         for (int i = 0; i < arr.length; i++) {
             if (!remove.test(arr[i])) {//valid item  - move it forward to beginning part of array.
                 last++;
                 if (last < i) {// skip if item already placed properly
                     arr[last] = arr[i];
-                    System.err.println("moved < " + arr[i] + " to " + last);
+                    System.err.println("moved " + arr[i] + " to " + last);
                 }
             }
         }
