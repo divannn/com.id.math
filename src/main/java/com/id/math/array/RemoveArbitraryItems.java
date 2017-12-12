@@ -19,13 +19,12 @@ public class RemoveArbitraryItems {
         if (arr == null) {
             throw new IllegalArgumentException("invalid argument");
         }
-        int last = -1;//index of last valid item(that should remain in array)
+        int last = -1;//index of last valid item that should remain in array (count from the left)
         for (int i = 0; i < arr.length; i++) {
             if (!remove.test(arr[i])) {//valid item  - move it forward to beginning part of array.
                 last++;
                 if (last < i) {// skip if item already placed properly
                     arr[last] = arr[i];
-                    System.err.println("moved " + arr[i] + " to " + last);
                 }
             }
         }
@@ -43,13 +42,16 @@ public class RemoveArbitraryItems {
         if (arr == null) {
             throw new IllegalArgumentException("invalid argument");
         }
-        int length = arr.length;
-        for (int i = length - 1; i >= 0; i--) {
+        int last = arr.length;//index of last valid item that should remain in array (count from the right)
+        for (int i = last - 1; i >= 0; i--) {
             if (remove.test(arr[i])) {
-                arr[i] = arr[--length];
+                --last;
+                if (i < last) {// skip if item already placed properly
+                    arr[i] = arr[last];
+                }
             }
         }
-        return length;
+        return last;
     }
 
     @Test

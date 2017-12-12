@@ -11,14 +11,14 @@ import static org.junit.Assert.assertTrue;
 public class GenAllSubsets {
 
     /**
-     * Generate all subsets of given set[]
+     * Generate all subsets of given set.
      */
     public static List<List> genSubsets(char set[]) {
         int n = set.length;
         int numOfSubsets = 1 << n;
         List<List> result = new ArrayList<>(numOfSubsets);
 
-        // Run a loop for printing all 2^n subsets
+        // loop for all 2^n subsets
         for (int i = 0; i < numOfSubsets; i++) {
             List<Character> curSubset = new ArrayList<>(n);
             // Gen current subset
@@ -49,4 +49,5 @@ public class GenAllSubsets {
             System.err.println(list);
         }
     }
+
 }
