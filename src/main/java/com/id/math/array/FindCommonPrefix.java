@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class FindCommonPrefix {
 
     /**
-     * Complexity is O(NM) where N- array size, M - minimum string size.
+     * Complexity is O(NM) where N - array size, M - minimum string size.
      *
      * @param arr array of strings to find prefix
      * @return max common prefix
