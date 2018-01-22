@@ -10,24 +10,34 @@ import com.id.math.util.ArrayUtils;
  */
 public class QuickSort extends AbstractSort {
 
-    // quicksort the array
-    public int[] sort(int[] a) {
-        sort(a, 0, a.length - 1);
-        return a;
-    }
-
-    // quicksort the sub-array from a[lo] to a[hi]
-    private static void sort(int[] a, int lo, int hi) {
-        if (hi <= lo) {
-            return;
-        }
-        int pivot_pos = partition(a, lo, hi);
-        sort(a, lo, pivot_pos - 1);
-        sort(a, pivot_pos + 1, hi);
+    /**
+     * quicksort the array in-place.
+     *
+     * @param arr to be sorted
+     */
+    public int[] sort(int[] arr) {
+        sort(arr, 0, arr.length - 1);
+        return arr;
     }
 
     /**
-     * partition the sub-array a[lo .. hi] by returning an index j
+     * quicksort the sub-array from arr[lo] to arr[hi] in-place.
+     *
+     * @param arr
+     * @param lo  - low index inclusive
+     * @param hi  - high index inclusive
+     */
+    private static void sort(int[] arr, int lo, int hi) {
+        if (hi <= lo) {
+            return;
+        }
+        int pivot_pos = partition(arr, lo, hi);
+        sort(arr, lo, pivot_pos - 1);
+        sort(arr, pivot_pos + 1, hi);
+    }
+
+    /**
+     * Partition the sub-array a[lo .. hi] by returning an index j
      * so that a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
      *
      * @return pivot position
@@ -38,7 +48,7 @@ public class QuickSort extends AbstractSort {
         int pivot = a[lo];//just take 1st item.
         while (i < j) {
             // find item on lo to swap
-            while ((a[++i] < pivot)) {
+            while (a[++i] < pivot) {
                 if (i == hi) break;
             }
             // find item on hi to swap
