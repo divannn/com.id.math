@@ -45,16 +45,15 @@ public class AnagramCheck {
             return false;
         }
 
-        int[] ar1 = new int[256];
-        int[] ar2 = new int[256];
+        int[] count = new int[256];
 
-        for (int i = 0; i < ar1.length; i++) {
-            ar1[ar1[i]]++;
-            ar2[ar2[i]]++;
+        for (int i = 0; i < s1.length(); i++) {
+            count[s1.charAt(i)]++;
+            count[s2.charAt(i)]--;
         }
 
-        for (int i = 0; i < ar1.length; i++) {
-            if (ar1[i] != ar2[i]) {
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] != 0) {
                 return false;
             }
         }
@@ -78,7 +77,7 @@ public class AnagramCheck {
         assertTrue(isAnagram2("listen", "silent"));
         assertTrue(isAnagram2("triangle", "integral"));
         assertTrue(isAnagram2("1a3bc2a", "abca123"));
-        assertFalse(isAnagram1("123", "ab"));
+        assertFalse(isAnagram2("123", "ab"));
         assertFalse(isAnagram2("1234", "12345"));
     }
 
