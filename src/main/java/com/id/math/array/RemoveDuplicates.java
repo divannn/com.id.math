@@ -11,7 +11,7 @@ public class RemoveDuplicates {
     /**
      * Removes duplicate items from sorted array in-place so that each element appear only once. Keeps order.
      *
-     * @param arr source array
+     * @param arr source sorted array
      * @return new size of array
      */
     public int removeDuplicates(int[] arr) {
@@ -22,15 +22,13 @@ public class RemoveDuplicates {
             return arr.length;
         }
 
-        int length = 1;//index of last valid item(that should remain in array)
-        int last = 0;
+        int last = 0;//index of last valid item(that should remain in array)
         for (int i = 1; i < arr.length; i++) {
             if (arr[last] != arr[i]) {
-                arr[length++] = arr[i];
-                last = i;
+                arr[++last] = arr[i];
             }
         }
-        return length;
+        return last + 1;
     }
 
     @Test
@@ -40,6 +38,10 @@ public class RemoveDuplicates {
         assertEquals(0, new_length);
 
         arr = new int[]{54};
+        new_length = removeDuplicates(arr);
+        assertEquals(1, new_length);
+
+        arr = new int[]{5, 5, 5};
         new_length = removeDuplicates(arr);
         assertEquals(1, new_length);
     }
