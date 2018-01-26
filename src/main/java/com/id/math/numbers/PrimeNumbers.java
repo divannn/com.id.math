@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -95,6 +96,14 @@ public class PrimeNumbers {
 
     @Test
     public void testEratosphenSieve() {
+        int[] sieve = sieve(50);
+        assertEquals(15, sieve.length);
+        assertEquals(2, sieve[0]);
+        assertEquals(47, sieve[14]);
 
+        int[] sieve2 = sieve(50);
+        assertEquals(15, sieve2.length);
+        assertEquals(2, sieve2[0]);
+        assertEquals(47, sieve2[14]);
     }
 }
