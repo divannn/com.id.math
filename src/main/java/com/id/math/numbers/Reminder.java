@@ -13,16 +13,18 @@ import static org.junit.Assert.assertEquals;
  */
 public class Reminder {
 
+    /** Find reminder given the number (dividend) and a divisor.
+     */
     public int getReminder(int n, int divisor) {
         if (divisor <= 0) {
             return -1;
         }
-        int whole = n / divisor;
-        return n - whole * divisor;
+        int quotient = n / divisor;
+        return n - quotient * divisor;
     }
 
     @Test
-    public void test1() {
+    public void test() {
         assertEquals(-1, getReminder(2, 0));
         assertEquals(0, getReminder(0, 1));
         assertEquals(0, getReminder(0, 3));
@@ -33,7 +35,7 @@ public class Reminder {
         assertEquals(0, getReminder(121, 11));
     }
 
-    public void testJavaReminder() {
+    private void testJavaReminder() {
         System.err.println(8 % 3);
         System.err.println(8 % -3);
         System.err.println(-8 % 3);

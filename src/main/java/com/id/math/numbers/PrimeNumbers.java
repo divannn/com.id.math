@@ -3,7 +3,9 @@ package com.id.math.numbers;
 import com.id.math.util.ArrayUtils;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -13,14 +15,17 @@ import static org.junit.Assert.assertTrue;
  */
 public class PrimeNumbers {
 
-    final static int MAX = 50;
 
     public static void main(String[] args) {
-        int[] primes = findPrimeNumbers(MAX);
-        ArrayUtils.printArray(primes);
+        ArrayUtils.printArray(sieve(50));
+        ArrayUtils.printArray(sieve2(50));
     }
 
-    private static int[] findPrimeNumbers(int limit) {
+    /**
+     * Eratosthenes sieve.
+     * Retruens prime number up to limit.
+     */
+    private static int[] sieve(int limit) {
         int[] sieve = new int[limit];
         sieve[0] = 2;//first element is 2.
         int sieveSize = 1;//size of sieve.
@@ -33,21 +38,40 @@ public class PrimeNumbers {
                 }
             }
             if (isPrime) {
-                sieve[sieveSize++] = i;//save prime number.
+                sieve[sieveSize++] = i;
             }
         }
         return Arrays.copyOf(sieve, sieveSize);
     }
 
+    //way2. similar but no exra memory for sieve.
+    private static int[] sieve2(int limit) {
+        List<Integer> result = new ArrayList<>();
 
-    private static boolean isPrime(int limit) {
-        if (limit <= 1) {
+        for (int i = 2; i <= limit; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j * j <= limit; j++) {
+                if (i > j && i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                result.add(i);
+            }
+        }
+        return result.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+
+    private static boolean isPrime(int number) {
+        if (number <= 1) {
             return false;
         }
 
-        for (int i = 2; i * i <= limit; i++) {
-            if (limit % i == 0) {
-                System.err.printf("For %s divisor is: %s %n", limit, i);
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                System.err.printf("For %s divisor is: %s %n", number, i);
                 return false;
             }
         }
@@ -55,7 +79,8 @@ public class PrimeNumbers {
     }
 
     @Test
-    public void test1() {
+    public void testPrime() {
+        assertFalse(isPrime(-4));
         assertFalse(isPrime(1));
         assertFalse(isPrime(4));
         assertFalse(isPrime(100));
@@ -68,4 +93,8 @@ public class PrimeNumbers {
         assertTrue(isPrime(97));
     }
 
+    @Test
+    public void testEratosphenSieve() {
+
+    }
 }
