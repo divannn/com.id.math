@@ -16,6 +16,9 @@ public class QuickSort extends AbstractSort {
      * @param arr to be sorted
      */
     public int[] sort(int[] arr) {
+        if (arr == null || arr.length == 0)  {
+            throw new IllegalArgumentException("Invalid input");
+        }
         sort(arr, 0, arr.length - 1);
         return arr;
     }
@@ -53,7 +56,7 @@ public class QuickSort extends AbstractSort {
             }
             // find item on hi to swap
             while (pivot < a[--j]) {
-                if (j == lo) break;      // redundant since a[lo] acts as sentinel
+                if (j == lo) break;
             }
 
             // check if pointers cross

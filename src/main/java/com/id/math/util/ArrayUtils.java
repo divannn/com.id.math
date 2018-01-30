@@ -47,15 +47,15 @@ public final class ArrayUtils {
 
 	/**
 	 * @param data
-	 * @param l left index inclusive
-	 * @param r right index exclusive
+	 * @param left left index inclusive
+	 * @param right right index exclusive
 	 * @return index of minimal element in array
 	 */
-	public static int minIndex(int[] data, int l, int r) {
-		checkParams(data, l, r);
-		int result = l;
-		int min = data[l];
-		for (int i = l; i < r; i++) {
+	public static int minIndex(int[] data, int left, int right) {
+		checkParams(data, left, right);
+		int result = left;
+		int min = data[left];
+		for (int i = left; i < right; i++) {
 			if (data[i] < min) {
 				result = i;
 				min = data[i];
