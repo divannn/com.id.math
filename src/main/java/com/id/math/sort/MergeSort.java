@@ -43,7 +43,7 @@ public class MergeSort extends AbstractSort {
     }
 
     // lo - left index inclusive
-    // mi - middle incex
+    // mi - middle index
     // hi - left index inclusive
     private void merge(int[] arr, int lo, int mi, int hi) {
         //make a copy initial array
@@ -63,7 +63,7 @@ public class MergeSort extends AbstractSort {
             k++;
         }
 
-        //fill the remaining part either left sub-array or right sub-array
+        //fill the remaining part - either left sub-array or right sub-array
         while (i <= mi) {
             arr[k] = helper[i++];
             k++;
