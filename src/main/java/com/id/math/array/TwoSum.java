@@ -73,10 +73,5 @@ public class TwoSum {
         assertArrayEquals(new int[]{0, 2}, twoSum2(arr, 7));
         assertArrayEquals(new int[]{0, 2}, twoSum3(arr, 7));
     }
-
-    @Test
-    public void test2() {
-    }
-
 }
 
