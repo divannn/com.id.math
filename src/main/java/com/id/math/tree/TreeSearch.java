@@ -40,19 +40,19 @@ public class TreeSearch {
         if (root == null) {
             return false;
         }
-        LinkedList<BinaryTreeNode> list = new LinkedList<>();
-        list.add(root);
+        LinkedList<BinaryTreeNode> queue = new LinkedList<>();
+        queue.add(root);
         BinaryTreeNode<Integer> current;
-        while (list.size() > 0) {
-            current = list.remove();
+        while (queue.size() > 0) {
+            current = queue.remove();
             if (target.equals(current.data)) {
                 return true;
             }
             if (current.left != null) {
-                list.add(current.left);
+                queue.add(current.left);
             }
             if (current.right != null) {
-                list.add(current.right);
+                queue.add(current.right);
             }
         }
         return false;

@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -24,7 +25,7 @@ public class PrimeNumbers {
 
     /**
      * Eratosthenes sieve.
-     * Retruens prime number up to limit.
+     * Returns prime number up to limit.
      */
     private static int[] sieve(int limit) {
         int[] sieve = new int[limit];
@@ -45,7 +46,7 @@ public class PrimeNumbers {
         return Arrays.copyOf(sieve, sieveSize);
     }
 
-    //way2. similar but no exra memory for sieve.
+    //way2. similar but no extra memory for sieve.
     private static int[] sieve2(int limit) {
         List<Integer> result = new ArrayList<>();
 

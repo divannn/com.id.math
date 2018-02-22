@@ -2,8 +2,8 @@ package com.id.math.tree;
 
 public class BinaryTreeNode<T> {
 
-	BinaryTreeNode left;
-	BinaryTreeNode right;
+	BinaryTreeNode<T> left;
+	BinaryTreeNode<T> right;
 	T data;
 
 	public BinaryTreeNode(T v) {
