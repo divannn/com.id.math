@@ -11,7 +11,7 @@ public class BinaryTreeWithHorizontalLinks {
     private static class NodeWithNeighbour<T> extends BinaryTreeNode<T> {
 
         BinaryTreeNode<T> neighbour;
-        int level = 0;//node level in the tree.
+        int level = -1;//node level in the tree.
 
         private NodeWithNeighbour(T v) {
             super(v);
@@ -40,6 +40,7 @@ public class BinaryTreeWithHorizontalLinks {
     private static void buildLinksByLevel(NodeWithNeighbour root) {
         //let's use BFS by level
         LinkedList<BinaryTreeNode> queue = new LinkedList<>();
+        root.level = 0;
         queue.add(root);
         while (!queue.isEmpty()) {
             NodeWithNeighbour curr = (NodeWithNeighbour) queue.remove();
@@ -48,13 +49,15 @@ public class BinaryTreeWithHorizontalLinks {
                 curr.neighbour = next;
             }
             //update level of children
-            if (curr.left != null) {
-                queue.add(curr.left);
-                ((NodeWithNeighbour) curr.left).level = curr.level + 1;
+            NodeWithNeighbour left = (NodeWithNeighbour) curr.left;
+            if (left != null) {
+                queue.add(left);
+                left.level = curr.level + 1;
             }
-            if (curr.right != null) {
-                queue.add(curr.right);
-                ((NodeWithNeighbour) curr.right).level = curr.level + 1;
+            NodeWithNeighbour right = (NodeWithNeighbour) curr.right;
+            if (right != null) {
+                queue.add(right);
+                right.level = curr.level + 1;
             }
         }
     }
