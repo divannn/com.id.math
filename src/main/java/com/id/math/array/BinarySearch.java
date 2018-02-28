@@ -30,7 +30,7 @@ public class BinarySearch {
         return binarySearch2(array, target, 0, array.length - 1);
     }
 
-    public static int binarySearch2(int[] array, int target, int left, int right) {
+    private static int binarySearch2(int[] array, int target, int left, int right) {
         if (array == null) {
             return -1;
         }

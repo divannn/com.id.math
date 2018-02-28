@@ -1,4 +1,4 @@
-package com.id.math.array;
+package com.id.math.stack;
 
 
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class SequenceWithBackspaceChecker {
         Stack<Character> st = new Stack<>();
         for (int i = 0; i < seq.length; i++) {
             if (seq[i] == '\b') {
-                if (!st.isEmpty()) {
+                if (!st.empty()) {
                     st.pop();
                 }
             } else {
