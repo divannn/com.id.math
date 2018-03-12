@@ -12,8 +12,18 @@ public class ValidParenthesisSequence {
     private static final char OPEN = '(';
     private static final char CLOSE = ')';
 
-    public boolean check(String s) {
-        if (s == null || s.isEmpty()) {
+
+    /**
+     * Allowed  parenthesis: (,[,{.
+     * Example:
+     * "(())()" - valid
+     * "())" - invalid
+     *
+     * @param s input
+     * @return true if string is valid parenthesis sequence
+     */
+    private boolean check(String s) {
+        if (s == null || s.isEmpty() || s.length() % 2 == 1) {
             return false;
         }
         char[] chars = s.toCharArray();
@@ -40,8 +50,8 @@ public class ValidParenthesisSequence {
     }
 
     // O(1) memory
-    public boolean check2(String s) {
-        if (s == null || s.isEmpty()) {
+    private boolean check2(String s) {
+        if (s == null || s.isEmpty() || s.length() % 2 == 1) {
             return false;
         }
         long num = 0;
@@ -58,6 +68,36 @@ public class ValidParenthesisSequence {
             }
         }
         return num == 0;
+    }
+
+
+    /**
+     * Extended of check(). Allowed parenthesis: (,[,{.
+     * Example, "([)]" - invalid
+     *
+     * @param s input
+     * @return true if string is valid parenthesis sequence
+     */
+    private static boolean check3(String s) {
+        if (s == null || s.isEmpty() || s.length() % 2 == 1) {
+            return false;
+        }
+        if (s == null || s.isEmpty()) {
+            return false;
+        }
+        Stack<Character> st = new Stack<>();
+        for (char c : s.toCharArray()) {
+            //Trick!!! Push right parentheses instead left to easy check
+            if (c == '(')
+                st.push(')');
+            else if (c == '{')
+                st.push('}');
+            else if (c == '[')
+                st.push(']');
+            else if (st.isEmpty() || st.pop() != c)
+                return false;
+        }
+        return st.isEmpty();
     }
 
     @Test
@@ -86,5 +126,13 @@ public class ValidParenthesisSequence {
         assertFalse(check2(")"));
         assertFalse(check2(")("));
         assertFalse(check2("(()()(()))("));
+    }
+
+
+    @Test
+    public void test3() {
+        assertTrue(check3("([]){{}}"));
+        assertFalse(check3("(()()(()))["));
+        assertFalse(check3("([)]"));
     }
 }
