@@ -1,12 +1,10 @@
 package com.id.math.string;
 
-public class ReverseString {
+import org.junit.Test;
 
-    public static void main(String[] args) {
-        String source = "abcd12345";
-        System.err.println("  source: " + source);
-        System.err.println("reversed: " + reverseString(source));
-    }
+import static org.junit.Assert.assertEquals;
+
+public class ReverseString {
 
     private static String reverseString(String s) {
         if (s == null) {
@@ -22,5 +20,11 @@ public class ReverseString {
         return new String(str);
     }
 
+    @Test
+    public void test() {
+        assertEquals("1", reverseString("1"));
+        assertEquals("ba", reverseString("ab"));
+        assertEquals("54321dcba", reverseString("abcd12345"));
+    }
 
 }

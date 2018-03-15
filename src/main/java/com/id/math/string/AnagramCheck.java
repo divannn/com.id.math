@@ -8,7 +8,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Implement a method to check if to strings are anagrams.
+ * Implement a method to check if to strings are anagrams (same set of chars forms another word).
  */
 public class AnagramCheck {
 
