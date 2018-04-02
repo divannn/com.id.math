@@ -18,7 +18,6 @@ public class Factorial {
         if (N < 0) {
             throw new IllegalArgumentException("Value must be positive");
         }
-        //BigInteger solution.
         System.err.println("good numbers for n = " + N);
         BigInteger result = BigInteger.ONE;
         for (int i = 1; i <= N; i++) {

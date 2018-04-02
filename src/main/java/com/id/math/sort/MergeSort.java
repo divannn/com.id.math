@@ -31,7 +31,7 @@ public class MergeSort extends AbstractSort {
     }
 
     // lo - left index inclusive
-    // hi - left index inclusive
+    // hi - right index inclusive
     private void sort(int[] arr, int lo, int hi) {
         if (hi <= lo) {
             return;
@@ -44,7 +44,7 @@ public class MergeSort extends AbstractSort {
 
     // lo - left index inclusive
     // mi - middle index
-    // hi - left index inclusive
+    // hi - right index inclusive
     private void merge(int[] arr, int lo, int mi, int hi) {
         //make a copy initial array
         for (int i = lo; i <= hi; i++) {
