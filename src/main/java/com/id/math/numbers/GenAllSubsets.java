@@ -1,4 +1,4 @@
-package com.id.math.array;
+package com.id.math.numbers;
 
 import org.junit.Test;
 
