@@ -11,11 +11,11 @@ public class ReverseString {
             return "";
         }
         char[] str = s.toCharArray();
-        int len = str.length - 1;
-        for (int i = 0; i <= len / 2; i++) {
+        int len = str.length;
+        for (int i = 0; i < len / 2; i++) {
             char tmp = str[i];
-            str[i] = str[len - i];
-            str[len - i] = tmp;
+            str[i] = str[len - i - 1];
+            str[len - i - 1] = tmp;
         }
         return new String(str);
     }
