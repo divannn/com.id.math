@@ -13,7 +13,6 @@ public class FindMaxWithoutComparison {
     public static int max(int a, int b) {
         int diff = a - b;//overflow may occur here - disregard.
         int sign = diff >>> 31;
-        System.err.println(">>> " + sign);
         return a - sign * diff;
     }
 
