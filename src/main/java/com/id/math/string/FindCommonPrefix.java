@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Find longest common prefix of string array.
  */
-//leet
+//leetcode
 //https://leetcode.com/problems/longest-common-prefix
 public class FindCommonPrefix {
 
