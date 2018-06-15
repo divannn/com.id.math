@@ -14,8 +14,9 @@ public class ReverseString {
         int len = str.length;
         for (int i = 0; i < len / 2; i++) {
             char tmp = str[i];
-            str[i] = str[len - i - 1];
-            str[len - i - 1] = tmp;
+            int lastInd = len - i - 1;
+            str[i] = str[lastInd];
+            str[lastInd] = tmp;
         }
         return new String(str);
     }
