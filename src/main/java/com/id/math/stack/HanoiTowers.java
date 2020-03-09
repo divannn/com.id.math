@@ -4,15 +4,17 @@ import org.junit.Test;
 
 import java.util.Stack;
 
+import static org.junit.Assert.assertEquals;
+
 public class HanoiTowers {
 
-    public static <T> void move(int n, Stack<T> source, Stack<T> middle, Stack<T> target) {
+    public static <T> void move(int n, Rod<T> source, Rod<T> middle, Rod<T> target) {
         if (n == 0) {
             return;
         }
         move(n - 1, source, target, middle);
         if (!source.isEmpty()) {
-            System.err.printf("PLate %d from rod  to rod {}\n", n);
+            System.err.printf("Move plate %d from rod '%s' to rod '%s' \n", n, source.getName(), target.getName());
             target.push(source.pop());
         }
         move(n - 1, middle, source, target);
@@ -20,15 +22,28 @@ public class HanoiTowers {
 
     @Test
     public void test() {
-        Stack<Integer> source = new Stack<>();
+        Rod<Integer> source = new Rod<>("SOURCE");
         source.push(4);
         source.push(3);
         source.push(2);
         source.push(1);
-        Stack<Integer> target = new Stack<>();
-        Stack<Integer> middle = new Stack<>();
+        Rod<Integer> target = new Rod<>("TARGET");
+        Rod<Integer> middle = new Rod<>("MIDDLE");
         move(source.size(), source, middle, target);
-        System.err.println("target rod: " + target.size());
-        System.err.println("target top plate: " + target.peek());
+
+        assertEquals(target.size(), 4);
+        assertEquals(target.peek(), new Integer(1));
+    }
+
+    private static class Rod<T> extends Stack<T> {
+        String name;
+
+        public Rod(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }
