@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class MthElemFromEnd {
 
@@ -21,8 +22,8 @@ public class MthElemFromEnd {
         assertEquals(6, getMthElemFromEndIterative(head, 1).data);
         assertEquals(1, getMthElemFromEndIterative(head, 6).data);
         assertEquals(2, getMthElemFromEndIterative(head, 5).data);
-        assertEquals(null, getMthElemFromEndIterative(head, 8));
-        assertEquals(null, getMthElemFromEndIterative(head, 7));
+        assertNull(getMthElemFromEndIterative(head, 8));
+        assertNull(getMthElemFromEndIterative(head, 7));
     }
 
     @Test
@@ -31,8 +32,8 @@ public class MthElemFromEnd {
         assertEquals(6, getMthElemFromEndRecursive(head, 1).data);
         assertEquals(1, getMthElemFromEndRecursive(head, 6).data);
         assertEquals(2, getMthElemFromEndRecursive(head, 5).data);
-        assertEquals(null, getMthElemFromEndRecursive(head, 8));
-        assertEquals(null, getMthElemFromEndRecursive(head, 7));
+        assertNull(getMthElemFromEndRecursive(head, 8));
+        assertNull(getMthElemFromEndRecursive(head, 7));
     }
 
     /**

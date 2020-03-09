@@ -69,7 +69,6 @@ public class PowerOf3 {
         return false;
     }
 
-
     public boolean isPowerOfThree4(int n) {
         return Arrays.binarySearch(numbers, n) >= 0;
     }
@@ -90,7 +89,6 @@ public class PowerOf3 {
         assertFalse(new PowerOf3().isPowerOfThree1(-3));
     }
 
-
     @Test
     public void test2() {
         assertTrue(new PowerOf3().isPowerOfThree2(1));
@@ -101,7 +99,6 @@ public class PowerOf3 {
         assertFalse(new PowerOf3().isPowerOfThree2(62));
         assertFalse(new PowerOf3().isPowerOfThree2(-3));
     }
-
 
     @Test
     public void test3() {
@@ -124,7 +121,6 @@ public class PowerOf3 {
         assertFalse(new PowerOf3().isPowerOfThree4(62));
         assertFalse(new PowerOf3().isPowerOfThree4(-3));
     }
-
 
     @Test
     public void test5() {

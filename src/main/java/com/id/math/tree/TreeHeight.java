@@ -7,11 +7,10 @@ import static org.junit.Assert.assertEquals;
 
 public class TreeHeight {
 
-
     /**
      * Find height of binary tree.
      *
-     * @param root
+     * @param root root
      * @return height of tree staring from 1
      */
     public static <T> int treeHeight(BinaryTreeNode<T> root) {
@@ -21,16 +20,15 @@ public class TreeHeight {
         return 1 + Math.max(treeHeight(root.left), treeHeight(root.right));
     }
 
-
     @Test
     public void test() {
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
-        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(2);
-        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(3);
-        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(4);
-        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(5);
-        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(6);
-        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(7);
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(111);
+        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(222);
+        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(333);
+        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(444);
+        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(555);
+        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(666);
+        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(777);
 
         root.left = n2;
         root.right = n3;

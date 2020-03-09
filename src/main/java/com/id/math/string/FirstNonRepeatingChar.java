@@ -8,12 +8,11 @@ import static org.junit.Assert.assertEquals;
 
 public class FirstNonRepeatingChar {
 
-
     /**
      * Find first non-repeating char that is not found before in passed string
      *
-     * @param s
-     * @return
+     * @param s input
+     * @return 1st non-repeating char that wasn't seen before
      */
     private static char find(String s) {
         if (s == null) {

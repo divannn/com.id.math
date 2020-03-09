@@ -67,5 +67,4 @@ public class IntPalindrome2 {
         assertTrue(isPalindrome2(3205023));
     }
 
-
 }

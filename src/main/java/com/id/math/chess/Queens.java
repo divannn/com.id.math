@@ -93,10 +93,7 @@ public class Queens {
 			return true;
 		}
 		//diagonal hit.
-		if ((x1 + y1 == x2 + y2) || (x1 - y1 == x2 - y2)) {
-			return true;
-		}
-		return false;
+		return (x1 + y1 == x2 + y2) || (x1 - y1 == x2 - y2);
 	}
 
 	/**

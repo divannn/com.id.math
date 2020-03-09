@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class FindMaxWithoutComparison {
 
     /**
-     * Find max amnog of two without using cmparison operations.
+     * Find max among of two without using comparison operations.
      */
     public static int max(int a, int b) {
         int diff = a - b;//overflow may occur here - disregard.

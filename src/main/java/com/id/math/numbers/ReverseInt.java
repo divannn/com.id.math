@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class ReverseInt {
 
     /**
-     * Reverse int is palindrome in terms decimals.
+     * Reverse int in terms of decimals.
      * Don't care about overflows.
      * Example:
      * 1234 -> 4321

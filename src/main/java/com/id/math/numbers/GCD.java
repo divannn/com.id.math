@@ -49,7 +49,6 @@ public class GCD {
         return a + b; //one of them is null.
     }
 
-
     /**
      * Recursive way.
      */

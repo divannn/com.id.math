@@ -35,10 +35,10 @@ public class Reminder {
         assertEquals(0, getReminder(121, 11));
     }
 
-    private void testJavaReminder() {
+/*    private void testJavaReminder() {
         System.err.println(8 % 3);
         System.err.println(8 % -3);
         System.err.println(-8 % 3);
         System.err.println(-8 % -3);
-    }
+    }*/
 }

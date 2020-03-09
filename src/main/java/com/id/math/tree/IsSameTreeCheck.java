@@ -18,7 +18,7 @@ public class IsSameTreeCheck {
      * @param q - tree 2
      * @return true if trees are equal
      */
-    public boolean isSameTree(BinaryTreeNode p, BinaryTreeNode q) {
+    public <T> boolean isSameTree(BinaryTreeNode<T> p, BinaryTreeNode<T> q) {
         if (p == null && q == null) {
             return true;
         }
@@ -42,7 +42,6 @@ public class IsSameTreeCheck {
         Assert.assertFalse(isSameTree(t1, t2));
     }
 
-
     private static BinaryTreeNode<Integer> createTree() {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
         BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(2);
@@ -62,13 +61,13 @@ public class IsSameTreeCheck {
     }
 
     private static BinaryTreeNode<Integer> createTree2() {
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1);
-        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(2);
-        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(3);
-        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(4);
-        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(5);
-        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(6);
-        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(7);
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(111);
+        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(222);
+        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(333);
+        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(444);
+        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(555);
+        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(666);
+        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(777);
 
         root.left = n2;
         root.right = n3;

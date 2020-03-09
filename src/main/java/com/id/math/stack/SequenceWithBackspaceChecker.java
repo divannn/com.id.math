@@ -9,12 +9,18 @@ import java.util.Stack;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Check if two sequences are the same. Return true if string is valid parenthesis sequence.
+ * [‘a’, ‘b’, ‘c’, ‘\b’]   -> ab
+ * [‘a’, ‘p’, ‘\b’, ‘b’]   -> ab
+ *
+ * result => true
+ * <p>
+ *
+ * #google
+ */
 public class SequenceWithBackspaceChecker {
 
-    //Check if two sequences are the same
-    //[‘a’, ‘b’, ‘c’, ‘\b’]   -> ab
-    //                                 => true
-    //[‘a’, ‘p’, ‘\b’, ‘b’]   -> ab
     public static boolean isTheSame(char[] seq1, char[] seq2) {
         if (seq1 == null || seq2 == null) {
             throw new IllegalArgumentException("Invalid input");
@@ -34,18 +40,17 @@ public class SequenceWithBackspaceChecker {
 
     private static List<Character> filter(char[] seq) {
         Stack<Character> st = new Stack<>();
-        for (int i = 0; i < seq.length; i++) {
-            if (seq[i] == '\b') {
+        for (char c : seq) {
+            if (c == '\b') {
                 if (!st.empty()) {
                     st.pop();
                 }
             } else {
-                st.push(seq[i]);
+                st.push(c);
             }
         }
         return st;
     }
-
 
     @Test
     public void test() {
@@ -62,4 +67,3 @@ public class SequenceWithBackspaceChecker {
         assertTrue(isTheSame(s1, s2));
     }
 }
-

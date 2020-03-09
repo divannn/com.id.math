@@ -32,7 +32,6 @@ public class AnagramCheck {
         return Arrays.equals(c1, c2);
     }
 
-
     /**
      * Count letters and compare number of letters in both strings.
      * O(n)
@@ -52,14 +51,13 @@ public class AnagramCheck {
             count[s2.charAt(i)]--;
         }
 
-        for (int i = 0; i < count.length; i++) {
-            if (count[i] != 0) {
+        for (int value : count) {
+            if (value != 0) {
                 return false;
             }
         }
         return true;
     }
-
 
     @Test
     public void test1() {
@@ -82,4 +80,3 @@ public class AnagramCheck {
     }
 
 }
-

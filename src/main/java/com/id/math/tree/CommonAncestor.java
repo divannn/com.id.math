@@ -11,9 +11,9 @@ public class CommonAncestor {
      * Given two nodes that already exist in a binary search tree, find the lowest common ancestor.
      * Use ints just to ease comparing.
      *
-     * @param root
-     * @param one
-     * @param two
+     * @param root root elem
+     * @param one  1st node
+     * @param two  2nd node
      * @return LCA for two nodes in binary search tree or null if there is no such
      */
     private static BinaryTreeNode<Integer> lcaInBinarySearchTree(BinaryTreeNode<Integer> root, BinaryTreeNode<Integer> one, BinaryTreeNode<Integer> two) {
@@ -33,7 +33,6 @@ public class CommonAncestor {
         return null;
     }
 
-
     /**
      * Find lower common ancestor of two arbitrary nodes presented in binary tree.
      *
@@ -42,15 +41,15 @@ public class CommonAncestor {
      * @param two  2nd node
      * @return node that us LCA for both nodes
      */
-    private static BinaryTreeNode<Integer> lca2(BinaryTreeNode<Integer> root, BinaryTreeNode<Integer> one, BinaryTreeNode<Integer> two) {
+    private static <T> BinaryTreeNode<T> lca2(BinaryTreeNode<T> root, BinaryTreeNode<T> one, BinaryTreeNode<T> two) {
         if (root == null) {
             return null;
         }
         if (one == root || two == root) {
             return root;
         }
-        BinaryTreeNode left = lca2(root.left, one, two);
-        BinaryTreeNode right = lca2(root.right, one, two);
+        BinaryTreeNode<T> left = lca2(root.left, one, two);
+        BinaryTreeNode<T> right = lca2(root.right, one, two);
         if (left != null && right != null) {
             return root;  // if both nodes and on different sides - we found LCA.
         }
@@ -106,13 +105,13 @@ public class CommonAncestor {
 
     @Test
     public void testLCA1() {
-        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(4);
-        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(2);
-        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(5);
-        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(1);
-        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(3);
-        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(6);
-        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(7);
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(44);
+        BinaryTreeNode<Integer> n2 = new BinaryTreeNode<>(22);
+        BinaryTreeNode<Integer> n3 = new BinaryTreeNode<>(56);
+        BinaryTreeNode<Integer> n4 = new BinaryTreeNode<>(11);
+        BinaryTreeNode<Integer> n5 = new BinaryTreeNode<>(33);
+        BinaryTreeNode<Integer> n6 = new BinaryTreeNode<>(66);
+        BinaryTreeNode<Integer> n7 = new BinaryTreeNode<>(77);
 
         root.left = n2;
         root.right = n3;
@@ -128,7 +127,6 @@ public class CommonAncestor {
         assertEquals(root, lcaInBinarySearchTree(root, n5, n7));
         assertEquals(n5, lcaInBinarySearchTree(root, n5, n5));
     }
-
 
     @Test
     public void testLCA2() {

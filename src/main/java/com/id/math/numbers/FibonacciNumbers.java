@@ -48,7 +48,7 @@ public class FibonacciNumbers {
      */
     private static long fib2(long n) {
         if (n <= 0) {
-            return -1;
+            throw new IllegalArgumentException("value must > 0");
         }
         long f1 = 1;
         long f2 = 1;
@@ -62,10 +62,8 @@ public class FibonacciNumbers {
 
     @Test
     public void test2() {
-        assertEquals(-1,fib2(-1)) ;
-        assertEquals(-1,fib2(0)) ;
-        assertEquals(1,fib2(2)) ;
-        assertEquals(2,fib2(3)) ;
+        assertEquals(1, fib2(2));
+        assertEquals(2, fib2(3));
     }
 
 }

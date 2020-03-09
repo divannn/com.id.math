@@ -12,9 +12,8 @@ public class ValidParenthesisSequence {
     private static final char OPEN = '(';
     private static final char CLOSE = ')';
 
-
     /**
-     * Allowed  parenthesis: (,[,{.
+     * Allowed  parenthesis: (.
      * Example:
      * "(())()" - valid
      * "())" - invalid
@@ -28,48 +27,22 @@ public class ValidParenthesisSequence {
         }
         char[] chars = s.toCharArray();
         Stack<Character> st = new Stack<>();
-        for (int i = 0; i < chars.length; i++) {
-            char ch = chars[i];
+        for (char ch : chars) {
             if (ch == OPEN) {
                 st.push(ch);
             } else if (ch == CLOSE) {
                 if (st.empty()) {
                     return false;
                 } else {
-                    Character prev = st.peek();
-                    if (prev == OPEN) {
-                        st.pop();
-                    } else {
+                    Character prev = st.pop();
+                    if (prev != OPEN) {
                         return false;
                     }
                 }
             }
-
         }
         return st.empty();
     }
-
-    // O(1) memory
-    private boolean check2(String s) {
-        if (s == null || s.isEmpty() || s.length() % 2 == 1) {
-            return false;
-        }
-        long num = 0;
-        char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            char ch = chars[i];
-            if (ch == OPEN) {
-                num++;
-            } else if (ch == CLOSE) {
-                num--;
-                if (num < 0) {
-                    return false;
-                }
-            }
-        }
-        return num == 0;
-    }
-
 
     /**
      * Extended of check(). Allowed parenthesis: (,[,{.
@@ -78,11 +51,8 @@ public class ValidParenthesisSequence {
      * @param s input
      * @return true if string is valid parenthesis sequence
      */
-    private static boolean check3(String s) {
+    private static boolean check2(String s) {
         if (s == null || s.isEmpty() || s.length() % 2 == 1) {
-            return false;
-        }
-        if (s == null || s.isEmpty()) {
             return false;
         }
         Stack<Character> st = new Stack<>();
@@ -98,6 +68,26 @@ public class ValidParenthesisSequence {
                 return false;
         }
         return st.isEmpty();
+    }
+
+    // O(1) memory
+    private boolean check3(String s) {
+        if (s == null || s.isEmpty() || s.length() % 2 == 1) {
+            return false;
+        }
+        long num = 0;
+        char[] chars = s.toCharArray();
+        for (char ch : chars) {
+            if (ch == OPEN) {
+                num++;
+            } else if (ch == CLOSE) {
+                num--;
+                if (num < 0) {
+                    return false;
+                }
+            }
+        }
+        return num == 0;
     }
 
     @Test
@@ -116,23 +106,22 @@ public class ValidParenthesisSequence {
 
     @Test
     public void test2() {
-        assertTrue(check2("()"));
-        assertTrue(check2("()()()"));
-        assertTrue(check2("(())"));
-        assertTrue(check2("(()()(()))()"));
-
-        assertFalse(check2(""));
-        assertFalse(check2("("));
-        assertFalse(check2(")"));
-        assertFalse(check2(")("));
-        assertFalse(check2("(()()(()))("));
+        assertTrue(check2("([]){{}}"));
+        assertFalse(check2("(()()(()))["));
+        assertFalse(check2("([)]"));
     }
-
 
     @Test
     public void test3() {
-        assertTrue(check3("([]){{}}"));
-        assertFalse(check3("(()()(()))["));
-        assertFalse(check3("([)]"));
+        assertTrue(check3("()"));
+        assertTrue(check3("()()()"));
+        assertTrue(check3("(())"));
+        assertTrue(check3("(()()(()))()"));
+
+        assertFalse(check3(""));
+        assertFalse(check3("("));
+        assertFalse(check3(")"));
+        assertFalse(check3(")("));
+        assertFalse(check3("(()()(()))("));
     }
 }

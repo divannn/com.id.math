@@ -81,7 +81,6 @@ public class ReverseLinkedList {
         Assert.assertEquals("4->3->2->1", reversed_str);
     }
 
-
     @Test
     public void testRecursive2() {
         ListNode<Integer> _1 = new ListNode<>(1);
@@ -103,4 +102,3 @@ public class ReverseLinkedList {
     }
 
 }
-
