@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.LinkedList;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class BinaryTreeWithHorizontalLinks {
 
@@ -37,24 +37,24 @@ public class BinaryTreeWithHorizontalLinks {
      *
      * @param root - root of the tree
      */
-    private static void buildLinksByLevel(NodeWithNeighbour root) {
+    private static void buildLinksByLevel(NodeWithNeighbour<Integer> root) {
         //let's use BFS by level
-        LinkedList<BinaryTreeNode> queue = new LinkedList<>();
+        LinkedList<NodeWithNeighbour<Integer>> queue = new LinkedList<>();
         root.level = 0;
         queue.add(root);
         while (!queue.isEmpty()) {
-            NodeWithNeighbour curr = (NodeWithNeighbour) queue.remove();
-            NodeWithNeighbour next = (NodeWithNeighbour) queue.peek();
+            NodeWithNeighbour<Integer> curr = queue.remove();
+            NodeWithNeighbour<Integer> next = queue.peek();
             if (next != null && next.level == curr.level) {
                 curr.neighbour = next;
             }
             //update level of children
-            NodeWithNeighbour left = (NodeWithNeighbour) curr.left;
+            NodeWithNeighbour<Integer> left = (NodeWithNeighbour<Integer>)curr.left;
             if (left != null) {
                 queue.add(left);
                 left.level = curr.level + 1;
             }
-            NodeWithNeighbour right = (NodeWithNeighbour) curr.right;
+            NodeWithNeighbour<Integer> right = (NodeWithNeighbour<Integer>) curr.right;
             if (right != null) {
                 queue.add(right);
                 right.level = curr.level + 1;
@@ -64,20 +64,20 @@ public class BinaryTreeWithHorizontalLinks {
 
     @Test
     public void test() {
-        NodeWithNeighbour r = createTree();
+        NodeWithNeighbour<Integer> r = createTree();
         buildLinksByLevel(r);
         NodeWithNeighbour<Integer> n2 = (NodeWithNeighbour<Integer>) r.left;
         NodeWithNeighbour<Integer> n3 = (NodeWithNeighbour<Integer>) r.right;
-        NodeWithNeighbour<Integer> n4 = (NodeWithNeighbour) n2.left;
-        NodeWithNeighbour<Integer> n5 = (NodeWithNeighbour) n2.right;
-        NodeWithNeighbour<Integer> n6 = (NodeWithNeighbour) n3.right;
-        NodeWithNeighbour<Integer> n7 = (NodeWithNeighbour) n6.left;
-        assertTrue(n2.neighbour == n3);
-        assertTrue(n3.neighbour == null);
-        assertTrue(n4.neighbour == n5);
-        assertTrue(n5.neighbour == n6);
-        assertTrue(n6.neighbour == null);
-        assertTrue(n7.neighbour == null);
+        NodeWithNeighbour<Integer> n4 = (NodeWithNeighbour<Integer>) n2.left;
+        NodeWithNeighbour<Integer> n5 = (NodeWithNeighbour<Integer>) n2.right;
+        NodeWithNeighbour<Integer> n6 = (NodeWithNeighbour<Integer>) n3.right;
+        NodeWithNeighbour<Integer> n7 = (NodeWithNeighbour<Integer>) n6.left;
+        assertSame(n2.neighbour, n3);
+        assertNull(n3.neighbour);
+        assertEquals(n4.neighbour, n5);
+        assertEquals(n5.neighbour, n6);
+        assertNull(n6.neighbour);
+        assertNull(n7.neighbour);
     }
 
     private static NodeWithNeighbour<Integer> createTree() {

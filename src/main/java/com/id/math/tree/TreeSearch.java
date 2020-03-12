@@ -7,9 +7,9 @@ public class TreeSearch {
     /**
      * Search in binary search tree.
      *
-     * @param root
-     * @param target
-     * @return
+     * @param root   root elem
+     * @param target item to find
+     * @return true if target found
      */
     //use ints just to ease comparing.
     public static boolean binarySearch(BinaryTreeNode<Integer> root, BinaryTreeNode<Integer> target) {
@@ -40,10 +40,10 @@ public class TreeSearch {
         if (root == null) {
             return false;
         }
-        LinkedList<BinaryTreeNode> queue = new LinkedList<>();
+        LinkedList<BinaryTreeNode<T>> queue = new LinkedList<>();
         queue.add(root);
-        BinaryTreeNode<Integer> current;
-        while (queue.size() > 0) {
+        BinaryTreeNode<T> current;
+        while (!queue.isEmpty()) {
             current = queue.remove();
             if (target.equals(current.data)) {
                 return true;
