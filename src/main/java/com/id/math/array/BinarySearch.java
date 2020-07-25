@@ -59,6 +59,10 @@ public class BinarySearch {
 
         int ind3 = binarySearch(data, 11);
         assertEquals(7, ind3);
+
+        int ind4 = binarySearch(data, 7);
+        assertEquals(5, ind4);
+
     }
 
     @Test
