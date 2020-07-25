@@ -34,10 +34,10 @@ public class FindEqualsObjectCountInSortedArray {
         } else if (array[middle] > target) {
             right = middle - 1;
         } else {
-            if (findFirst && check(array, middle - 1) && array[middle - 1] == target) {
+            if (findFirst && checkBounds(array, middle - 1) && array[middle - 1] == target) {
                 return binarySearch(array, target, left, middle - 1, findFirst);
             }
-            if (!findFirst && check(array, middle + 1) && array[middle + 1] == target) {
+            if (!findFirst && checkBounds(array, middle + 1) && array[middle + 1] == target) {
                 return binarySearch(array, target, middle + 1, right, findFirst);
             }
             return middle;
@@ -45,7 +45,7 @@ public class FindEqualsObjectCountInSortedArray {
         return binarySearch(array, target, left, right, findFirst);
     }
 
-    private static boolean check(int[] array, int ind) {
+    private static boolean checkBounds(int[] array, int ind) {
         return ind >= 0 && ind < array.length;
     }
 
