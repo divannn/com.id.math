@@ -33,7 +33,7 @@ public class FindEqualsObjectCountInSortedArray {
             left = middle + 1;
         } else if (array[middle] > target) {
             right = middle - 1;
-        } else {
+        } else {//meat - when we found first target item.
             if (findFirst && checkBounds(array, middle - 1) && array[middle - 1] == target) {
                 return binarySearch(array, target, left, middle - 1, findFirst);
             }
