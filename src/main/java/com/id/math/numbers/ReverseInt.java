@@ -32,5 +32,4 @@ public class ReverseInt {
         assertEquals(9870789, reverse(9870789));
     }
 
-
 }

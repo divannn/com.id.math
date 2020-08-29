@@ -28,7 +28,7 @@ public class RemoveArbitraryItems {
                 }
             }
         }
-        return last == -1 ? 0 : last + 1;
+        return last + 1;
     }
 
     /**
