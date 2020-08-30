@@ -25,6 +25,17 @@ public class RotateArray {
     }
 
     /**
+     * Rotate array to the left by 1.
+     */
+    private static void leftRotateByOne(int[] array) {
+        int tmp = array[0];
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[array.length - 1] = tmp;
+    }
+
+    /**
      * @complexity O(n)
      * Space: O(1)
      * Not mine - really smart!
@@ -39,21 +50,9 @@ public class RotateArray {
     }
 
     /**
-     * Rotate array to the left by 1.
-     */
-    private static void leftRotateByOne(int[] array) {
-        int tmp = array[0];
-        for (int i = 0; i < array.length - 1; i++) {
-            array[i] = array[i + 1];
-        }
-        array[array.length - 1] = tmp;
-    }
-
-
-    /**
      * Reverses array in place
      *
-     * @param array
+     * @param array source
      * @param start index inclusive
      * @param end   index inclusive
      */
@@ -76,7 +75,7 @@ public class RotateArray {
         assertArrayEquals(new int[]{5, 4, 0, 1, -2}, arr);
 
         arr = new int[]{1};
-        reverse(arr, 0, arr.length - 1);
+        reverse(arr, 0, 0);
         assertArrayEquals(new int[]{1}, arr);
 
         arr = new int[]{-2, 1, 0, 4, 5, 8};

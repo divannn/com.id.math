@@ -22,7 +22,7 @@ public class IsSameTreeCheck {
         if (p == null && q == null) {
             return true;
         }
-        if (p != null && q != null && p.data == q.data) {
+        if (p != null && q != null && p.data.equals(q.data)) {
             return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
         }
         return false;
