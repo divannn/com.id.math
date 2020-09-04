@@ -25,7 +25,7 @@ public class FindAverageInLevel {
      * Algorithm: DFS
      *
      * @param root - root of tree
-     * @return true if tree is valid binaray search tree
+     * @return array of average values per tree level
      * @complexity O(n)
      * @space O(n) (recursion)
      */
