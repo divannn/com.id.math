@@ -27,26 +27,27 @@ public class FindAverageInLevel {
      * @param root - root of tree
      * @return array of average values per tree level
      * @complexity O(n)
-     * @space O(n) (recursion)
+     * @space O(log*n) for sting sums per level, but because of recursion - O(n)
      */
     public List<Integer> findAverageInLevel(BinaryTreeNode<Integer> root) {
-        HashMap<Integer, List<Integer>> map = new HashMap<>();
+        HashMap<Integer, LevelData> map = new HashMap<>();
         collect(root, map, 0);
         List<Integer> result = new ArrayList<>();
         for (Integer level : map.keySet()) {
-            List<Integer> levelData = map.get(level);
-            int levelAvg = levelData.stream().mapToInt(Integer::intValue).sum() / levelData.size();
+            LevelData levelData = map.get(level);
+            int levelAvg = levelData.sum / levelData.numberOfNodes;
             result.add(levelAvg);
         }
         return result;
     }
 
-    private void collect(BinaryTreeNode<Integer> root, HashMap<Integer, List<Integer>> map, int level) {
+    private void collect(BinaryTreeNode<Integer> root, HashMap<Integer, LevelData> map, int level) {
         if (root == null) {
             return;
         }
-        List<Integer> levelData = map.computeIfAbsent(level, k -> new ArrayList<>());
-        levelData.add(root.data);
+        LevelData levelData = map.computeIfAbsent(level, k -> new LevelData());
+        levelData.sum += root.data;
+        levelData.numberOfNodes++;
         collect(root.left, map, level + 1);
         collect(root.right, map, level + 1);
     }
@@ -89,6 +90,11 @@ public class FindAverageInLevel {
         n3.right = n5;
 
         return root;
+    }
+
+    private static class LevelData {
+        int sum;
+        int numberOfNodes;
     }
 
 }
