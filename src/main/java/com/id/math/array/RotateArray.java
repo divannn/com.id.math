@@ -12,7 +12,7 @@ import static org.junit.Assert.assertArrayEquals;
 public class RotateArray {
 
     /**
-     * @complexity O(n * shift)
+     * @time O(n * shift)
      * Space: O(1)
      */
     public static void rotateLeft1(int[] array, int shift) {
@@ -36,7 +36,7 @@ public class RotateArray {
     }
 
     /**
-     * @complexity O(n)
+     * @time O(n)
      * Space: O(1)
      * Not mine - really smart!
      */

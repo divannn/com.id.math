@@ -5,7 +5,7 @@ import com.id.math.util.ArrayUtils;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n*n)
+ * @time in worse case : O(n*n)
  * @stable false
  */
 public class SelectionSort extends AbstractSort {

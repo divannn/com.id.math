@@ -7,7 +7,7 @@ public class IsValidBinarySearchTree {
 
     /**
      * Algorithm: DFS
-     * @complexity O(n)
+     * @time O(n)
      * @space O(n) (recursion)
      *
      * @param root - root of tree

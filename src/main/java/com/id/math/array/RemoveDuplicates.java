@@ -11,7 +11,7 @@ public class RemoveDuplicates {
     /**
      * Removes duplicate items from sorted array in-place so that each element appear only once. Keeps order.
      *
-     * @complexity O(n)
+     * @time O(n)
      * @param arr source sorted array
      * @return new size of array
      */

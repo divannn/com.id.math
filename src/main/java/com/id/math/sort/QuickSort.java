@@ -5,7 +5,7 @@ import com.id.math.util.ArrayUtils;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n*n), in worse case : O(n*ln(n)).
+ * @time in worse case : O(n*n), in worse case : O(n*ln(n)).
  * @stable false
  */
 public class QuickSort extends AbstractSort {

@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class LargestRectangleArea {
 
     //naive
-    //@complexity: O(n*n)
+    //@time: O(n*n)
     private static int find(int[] histogram) {
         int result = 0;
         for (int i = 0; i < histogram.length; i++) {

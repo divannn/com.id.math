@@ -26,7 +26,7 @@ public class FindAverageInLevel {
      *
      * @param root - root of tree
      * @return array of average values per tree level
-     * @complexity O(n)
+     * @time O(n)
      * @space O(log*n) for sting sums per level, but because of recursion - O(n)
      */
     public List<Integer> findAverageInLevel(BinaryTreeNode<Integer> root) {

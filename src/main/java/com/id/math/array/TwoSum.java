@@ -30,8 +30,8 @@ public class TwoSum {
 
     /**
      * two-pass hash map
-     * Time : O(n)
-     * Space: O(n)
+     * @time : O(n)
+     * @space: O(n)
      */
     public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();

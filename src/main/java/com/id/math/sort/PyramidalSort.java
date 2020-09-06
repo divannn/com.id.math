@@ -4,7 +4,7 @@ import com.id.math.util.ArrayUtils;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n*ln(n))
+ * @time in worse case : O(n*ln(n))
  * @stable false
  */
 public class PyramidalSort extends AbstractSort {
@@ -24,7 +24,7 @@ public class PyramidalSort extends AbstractSort {
      * @param i        index to sift from
      * @param heapSize length of heap
      *                 Array data[i,heapSize) is valid pyramid.
-     * @complexity in worse case : O(n*ln(n))
+     * @time in worse case : O(n*ln(n))
      */
     private static void siftDown(int[] data, int i, int heapSize) {
         int leftChildInd, rightChildInd, largestChildInd;
@@ -47,7 +47,7 @@ public class PyramidalSort extends AbstractSort {
 
     /**
      * @param data
-     * @complexity in worse case : O(n) (not O(n*ln(n))) (see additional info about this fact)
+     * @time in worse case : O(n) (not O(n*ln(n))) (see additional info about this fact)
      */
     private static void buildHeap(int[] data) {
         //start from the middle of pyramid as leafs are pyramids with size 1.

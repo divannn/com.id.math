@@ -11,7 +11,7 @@ import java.util.HashSet;
 public class RemoveDupsFromLinkedList {
 
     //using extra memory
-    //@complexity O(n)
+    //@time O(n)
     private static <T> ListNode<T> removeDups1(ListNode<T> head) {
         HashSet<T> set = new HashSet<>();
         ListNode previous = null;
@@ -29,7 +29,7 @@ public class RemoveDupsFromLinkedList {
     }
 
     //no extra memory
-    //@complexity O(n*n)
+    //@time O(n*n)
     private static <T> ListNode<T> removeDups2(ListNode<T> head) {
         ListNode curr = head;
         while (curr != null) {

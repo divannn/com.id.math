@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n*ln(n)).
+ * @time in worse case : O(n*ln(n)).
  * @stable true
  */
 public class MergeSort extends AbstractSort {

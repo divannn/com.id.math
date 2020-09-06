@@ -4,7 +4,7 @@ import com.id.math.util.ArrayUtils;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n*n)
+ * @time in worse case : O(n*n)
  * @stable true
  */
 public class InsertionSort extends AbstractSort {

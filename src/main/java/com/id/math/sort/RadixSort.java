@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 /**
  * @author idanilov
- * @complexity in worse case : O(n)
+ * @time in worse case : O(n)
  * @stable true
  */
 public class RadixSort extends AbstractSort {
