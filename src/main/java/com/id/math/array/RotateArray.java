@@ -13,7 +13,7 @@ public class RotateArray {
 
     /**
      * @time O(n * shift)
-     * Space: O(1)
+     * @space: O(1)
      */
     public static void rotateLeft1(int[] array, int shift) {
         if (shift <= 0 || array == null || array.length <= shift) {
@@ -37,7 +37,7 @@ public class RotateArray {
 
     /**
      * @time O(n)
-     * Space: O(1)
+     * @space: O(1)
      * Not mine - really smart!
      */
     public static void rotateLeft2(int[] array, int shift) {

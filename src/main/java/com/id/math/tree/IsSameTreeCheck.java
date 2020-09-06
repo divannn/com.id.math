@@ -12,7 +12,7 @@ public class IsSameTreeCheck {
      * 3- If one is NULL and the other is not, then the trees are structurally different and we need to return false.
      * 4- If they are both not empty, we compare the values and recurse for both left and right children if the values are equal.
      * <p>
-     * Time complexity: O(min(N, M)), where N and M are the number of nodes for the trees. At the worst case, we will process all the nodes in the smaller tree.
+     * @time : O(min(N, M)), where N and M are the number of nodes for the trees. At the worst case, we will process all the nodes in the smaller tree.
      *
      * @param p - tree 1
      * @param q - tree 2

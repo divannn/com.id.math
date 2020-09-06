@@ -12,8 +12,8 @@ public class ShuffleArray {
 
     /**
      * Shuffle array randomly in-place.
-     * Time complexity: O(n)
-     * Space: O(1)
+     * @time complexity: O(n)
+     * @space: O(1)
      */
     public static void shuffle(int[] array) {
         Random random = new Random();

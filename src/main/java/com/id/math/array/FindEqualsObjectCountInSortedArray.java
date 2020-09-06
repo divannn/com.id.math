@@ -9,8 +9,8 @@ public class FindEqualsObjectCountInSortedArray {
 
     /**
      * recursive way.
-     * Time : O(n)
-     * Space: O(logn)
+     * @time: O(n)
+     * @space: O(logn)
      */
     public static int findEqualsObjectCount(int[] array, int target) {
         if (array == null || array.length == 0) {

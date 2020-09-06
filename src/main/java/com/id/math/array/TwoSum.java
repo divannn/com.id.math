@@ -14,8 +14,8 @@ public class TwoSum {
 
     /**
      * Brute force
-     * Time : O(n*n)
-     * Space: O(1)
+     * @time : O(n*n)
+     * @space: O(1)
      */
     public int[] twoSum1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
@@ -50,8 +50,8 @@ public class TwoSum {
 
     /**
      * one-pass hash map
-     * Time : O(n)
-     * Space: O(n)
+     * @time : O(n)
+     * @space: O(n)
      */
     public int[] twoSum3(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
