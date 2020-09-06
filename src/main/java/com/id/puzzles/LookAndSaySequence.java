@@ -1,10 +1,10 @@
-package com.id.puzzles.look_and_say_sequence;
+package com.id.puzzles;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Implement generation of Nth item of "Look and Say" (aka "Count and Say") sequence:
+ * Generate of Nth item of "Look and Say" (aka "Count and Say") sequence:
  * 1
  * 11
  * 21
@@ -20,6 +20,11 @@ import org.junit.Test;
  */
 public class LookAndSaySequence {
 
+    /**
+     * Generate
+     * @param n Nth number staring from 0
+     * @return Nth number
+     */
     String genLookAndSaySequence(int n) {
         if (n < 0) {
             return "";
