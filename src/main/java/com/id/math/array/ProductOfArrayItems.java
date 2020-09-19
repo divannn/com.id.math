@@ -120,7 +120,7 @@ public class ProductOfArrayItems {
         }
 
         long[] result = new long[arr.length];
-        //for eacg i just multipy left product and right product..
+        //for each i just multiply left product and right product..
         for (int i = 0; i < result.length; i++) {
             result[i] = left_product[i] * right_product[i];
         }
