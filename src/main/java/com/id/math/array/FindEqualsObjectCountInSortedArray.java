@@ -4,12 +4,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-//facebook
+/**
+ * Find number of equq items in sorted array.
+ *
+ * @company facebook
+ */
 public class FindEqualsObjectCountInSortedArray {
 
     /**
-     * recursive way.
-     * @time: O(n)
+     * Recursive way.
+     *
+     * @time O(n)
      * @space: O(logn)
      */
     public static int findEqualsObjectCount(int[] array, int target) {
@@ -50,7 +55,7 @@ public class FindEqualsObjectCountInSortedArray {
     }
 
     @Test
-    public void testRecur() {
+    public void test() {
         int[] data = {1, 1, 2, 4, 5};
         int ind = findEqualsObjectCount(data, 2);
         assertEquals(1, ind);

@@ -7,13 +7,13 @@ import static org.junit.Assert.assertEquals;
 public class BinarySearch {
 
     public static int binarySearch(int[] array, int target) {
-        if (array == null) {
+        if (array == null || array.length == 0) {
             return -1;
         }
         int left = 0;
         int right = array.length - 1;
         while (left <= right) {
-            int middle = (left + right) / 2;
+            int middle = left + (right - left) / 2;//take care about overflow
             if (array[middle] < target) {
                 left = middle + 1;
             } else if (array[middle] > target) {
@@ -31,13 +31,13 @@ public class BinarySearch {
     }
 
     private static int binarySearch2(int[] array, int target, int left, int right) {
-        if (array == null) {
+        if (array == null || array.length == 0) {
             return -1;
         }
         if (left > right) {
             return -1;
         }
-        int middle = (left + right) / 2;
+        int middle = left + (right - left) / 2;//take care about overflow
         if (array[middle] < target) {
             left = middle + 1;
         } else if (array[middle] > target) {

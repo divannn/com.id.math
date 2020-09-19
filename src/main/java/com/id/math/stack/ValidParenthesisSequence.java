@@ -20,6 +20,7 @@ public class ValidParenthesisSequence {
      *
      * @param s input
      * @return true if string is valid parenthesis sequence
+     * @space O(1)
      */
     private boolean check(String s) {
         if (s == null || s.isEmpty() || s.length() % 2 == 1) {
@@ -50,6 +51,7 @@ public class ValidParenthesisSequence {
      *
      * @param s input
      * @return true if string is valid parenthesis sequence
+     * @space O(1)
      */
     private static boolean check2(String s) {
         if (s == null || s.isEmpty() || s.length() % 2 == 1) {
@@ -70,7 +72,10 @@ public class ValidParenthesisSequence {
         return st.isEmpty();
     }
 
-    // O(1) memory
+    /**
+     * Via counting.
+     * @space O(1)
+     */
     private boolean check3(String s) {
         if (s == null || s.isEmpty() || s.length() % 2 == 1) {
             return false;
