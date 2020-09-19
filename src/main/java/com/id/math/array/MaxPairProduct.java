@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
  * Find a pair with maximum product in array of integers.
  * Consider negative values in array.
  */
-public class MaxProduct {
+public class MaxPairProduct {
 
     // naive - works for non-negative values.
     private static long maxProduct(int[] arr) {
@@ -57,9 +57,8 @@ public class MaxProduct {
         }
     }
 
-
     @Test
-    public void test1() {
+    public void test() {
         int[] arr = {4, 5, 1, 2, 0, 3, 9};
         assertEquals(45, maxProduct2(arr));
         int[] arr2 = {0, 1, 0, 0, 1};
