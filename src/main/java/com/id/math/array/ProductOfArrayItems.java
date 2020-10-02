@@ -28,7 +28,6 @@ public class ProductOfArrayItems {
 
     /**
      * Naive.
-     * <p>
      *
      * @param arr - source
      * @return result
@@ -56,7 +55,7 @@ public class ProductOfArrayItems {
     }
 
     /**
-     * Smart but doesn't work if array contains zero.
+     * Via division - Smart but doesn't work if array contains zero.
      * <p>
      * Observation:
      * <p>
@@ -91,14 +90,13 @@ public class ProductOfArrayItems {
     }
 
     /**
-     * Do NOT use division!!
+     * Do NOT use division!
      *
      * @param arr source array
      * @return new array containing multiplication
      * @time O(n)
      * @space O(n)
      */
-    //TODO: smart way - see leetcode.
     public long[] calculateSmart(int[] arr) {
         if (arr == null || arr.length == 0) {
             return new long[0];

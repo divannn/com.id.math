@@ -25,7 +25,7 @@ public class MaxSumOfContiguousSubarray {
     private static final int EXPECTED_5 = 7;
 
     /**
-     * Naive
+     * Naive.
      *
      * @param arr - source
      * @return max sum of subarray
@@ -47,7 +47,7 @@ public class MaxSumOfContiguousSubarray {
     }
 
     /**
-     * Kadane's algorithm
+     * Kadane's algorithm.
      *
      * @param arr - source
      * @return max sum of subarray
