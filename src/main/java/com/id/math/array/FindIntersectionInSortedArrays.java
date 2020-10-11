@@ -33,7 +33,7 @@ public class FindIntersectionInSortedArrays {
         while (i < a1.length && j < a2.length) {
             if (a1[i] < a2[j]) {
                 i++;
-            } else if (a1[i] > a2[j]) {
+            } else if (a2[j] < a1[i]) {
                 j++;
             } else {
                 result++;
