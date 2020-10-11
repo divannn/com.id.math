@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
  * @company yandex (I was asked)
  */
 
-public class FindCommonsInSortedArrays {
+public class FindIntersectionInSortedArrays {
 
     public int solution(int[] a1, int[] a2) {
         if (a1 == null || a1.length == 0 || a2 == null || a2.length == 0) {
@@ -40,7 +40,6 @@ public class FindCommonsInSortedArrays {
                 i++;
                 j++;
             }
-
         }
         return result;
     }
