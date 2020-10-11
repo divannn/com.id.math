@@ -38,7 +38,7 @@ public class FindLeftmostZeroColumnInMatrix {
         for (int[] row : m) {
             int cur = -1;
             for (int j = 0; j < row.length; j++) {
-                if (row[j] == 0) {//find rist 0 in row
+                if (row[j] == 0) {//find first 0 in row
                     cur = j;
                     break;
                 }

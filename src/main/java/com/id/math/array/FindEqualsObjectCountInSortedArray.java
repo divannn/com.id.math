@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Find number of equq items in sorted array.
+ * Find number of equal items in sorted array.
  *
  * @company facebook
  */
@@ -15,7 +15,7 @@ public class FindEqualsObjectCountInSortedArray {
      * Recursive way.
      *
      * @time O(n)
-     * @space: O(logn)
+     * @space: O(log*n)
      */
     public static int findEqualsObjectCount(int[] array, int target) {
         if (array == null || array.length == 0) {
@@ -38,7 +38,7 @@ public class FindEqualsObjectCountInSortedArray {
             left = middle + 1;
         } else if (array[middle] > target) {
             right = middle - 1;
-        } else {//meat - when we found first target item.
+        } else {//MEAT - when we found first target item.
             if (findFirst && checkBounds(array, middle - 1) && array[middle - 1] == target) {
                 return binarySearch(array, target, left, middle - 1, findFirst);
             }

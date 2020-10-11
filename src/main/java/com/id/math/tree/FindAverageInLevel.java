@@ -27,7 +27,7 @@ public class FindAverageInLevel {
      * @param root - root of tree
      * @return array of average values per tree level
      * @time O(n)
-     * @space O(log*n) for sting sums per level, but because of recursion - O(n)
+     * @space O(log*n) for storing sums per level, but because of recursion - O(n)
      */
     public List<Integer> findAverageInLevel(BinaryTreeNode<Integer> root) {
         HashMap<Integer, LevelData> map = new HashMap<>();
