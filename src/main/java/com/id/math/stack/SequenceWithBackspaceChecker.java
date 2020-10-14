@@ -10,14 +10,20 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Check if two sequences are the same. Return true if string is valid parenthesis sequence.
+ * Check if two sequences are the same.
+ * Sequence may contain special symbol '\b' - backspace.
+ * <p>
+ * Example:
+ * <p>
+ * Input:
+ * <p>
  * [‘a’, ‘b’, ‘c’, ‘\b’]   -> ab
  * [‘a’, ‘p’, ‘\b’, ‘b’]   -> ab
  *
- * result => true
  * <p>
+ * Output:  true
  *
- * #google
+ * @company google
  */
 public class SequenceWithBackspaceChecker {
 
