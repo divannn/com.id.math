@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Given an aray of integers find a maximum sum of a contiguous subarray of source array.
+ * Given an array of integers find a maximum sum of a contiguous subarray of source array.
  * <p>
  * Example:
  * Input: [-2,0,1,3]
- * Output: 4
+ * Output: 4 (subarray [1, 3])
  */
 public class MaxSumOfContiguousSubarray {
 
