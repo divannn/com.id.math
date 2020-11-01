@@ -21,7 +21,7 @@ public class OneEditWay {
             return oneEditReplace(s1, s2);
         } else if (s1.length() + 1 == s2.length()) {
             return oneEditInsert(s1, s2);
-        } else if (s1.length() - 1 == s2.length()) {//!!! no need delete case - just reverse.
+        } else if (s2.length() + 1 == s1.length()) {//!!! no need delete case - just reverse.
             return oneEditInsert(s2, s1);
         }
         return false;
