@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -64,7 +64,6 @@ public class PrimeNumbers {
         }
         return result.stream().mapToInt(Integer::intValue).toArray();
     }
-
 
     private static boolean isPrime(int number) {
         if (number <= 1) {

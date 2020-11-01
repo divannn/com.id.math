@@ -51,11 +51,10 @@ public class OneEditWay {
                 if (index1 != index2) {
                     return false;
                 }
-                index2++;
             } else {
                 index1++;
-                index2++;
             }
+            index2++;
         }
         return true;
     }

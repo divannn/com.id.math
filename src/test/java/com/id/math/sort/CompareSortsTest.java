@@ -19,7 +19,7 @@ public class CompareSortsTest {
     }
 
     private int[] generate(int n) {
-        int result[] = new int[n];
+        int[] result = new int[n];
         for (int i = 0; i < n; i++) {
             result[i] = (int) Math.round(Math.random() * 100);
         }

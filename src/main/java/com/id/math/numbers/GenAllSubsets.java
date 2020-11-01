@@ -13,7 +13,7 @@ public class GenAllSubsets {
     /**
      * Generate all subsets of given set.
      */
-    public static List<List> genSubsets(char set[]) {
+    public static List<List> genSubsets(char[] set) {
         int n = set.length;
         int numOfSubsets = 1 << n;
         List<List> result = new ArrayList<>(numOfSubsets);
@@ -36,14 +36,14 @@ public class GenAllSubsets {
 
     @Test
     public void test() {
-        char set[] = {'a', 'b', 'c', 'd'};
+        char[] set = {'a', 'b', 'c', 'd'};
         List<List> r = genSubsets(set);
         assertEquals(16, r.size());
         assertTrue(r.get(0).size() == 0);
     }
 
     public static void main(String[] args) {
-        char set[] = {'a', 'b', 'c', 'd'};
+        char[] set = {'a', 'b', 'c', 'd'};
         List<List> r = genSubsets(set);
         for (List list : r) {
             System.err.println(list);

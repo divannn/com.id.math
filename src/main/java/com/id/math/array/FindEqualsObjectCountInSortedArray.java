@@ -15,7 +15,7 @@ public class FindEqualsObjectCountInSortedArray {
      * Recursive way.
      *
      * @time O(n)
-     * @space: O(log*n)
+     * @space O(log*n)
      */
     public static int findEqualsObjectCount(int[] array, int target) {
         if (array == null || array.length == 0) {

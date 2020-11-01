@@ -6,8 +6,8 @@ import java.util.LinkedList;
 
 public class Graph {
 	//number of vertices.
-	private int n;
-	private LinkedList<Node>[] arr;
+	private final int n;
+	private final LinkedList<Node>[] arr;
 
 	private ArrayList<Pair> edges = new ArrayList<Pair>(1000);
 

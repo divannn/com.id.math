@@ -12,8 +12,8 @@ public class ShuffleArray {
 
     /**
      * Shuffle array randomly in-place.
-     * @time complexity: O(n)
-     * @space: O(1)
+     * @time  O(n)
+     * @space O(1)
      */
     public static void shuffle(int[] array) {
         Random random = new Random();
@@ -26,7 +26,7 @@ public class ShuffleArray {
     @Test
     public void test() {
         int[] arr = {9, -2, 1, 0, 4, 5};
-        int copy[] = Arrays.copyOf(arr, arr.length);
+        int [] copy = Arrays.copyOf(arr, arr.length);
         ArrayUtils.printArray(arr);
         shuffle(copy);
         ArrayUtils.printArray(copy);

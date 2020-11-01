@@ -12,27 +12,28 @@ import static org.junit.Assert.assertEquals;
 public class FindCommonPrefix {
 
     /**
-     * Complexity is O(NM) where N - array size, M - minimum string length.
+     * n - array size, m - minimum string length.
      *
-     * @param arr array of strings to find prefix
+     * @param strs array of strings to find prefix
      * @return max common prefix
+     * @time O(n * m)
      */
-    private String longestCommonPrefix(String arr[]) {
-        if (arr == null || arr.length == 0) {
+    private String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
             return "";
         }
 
         String result = "";
-        int min_len = arr[0].length();
-        for (String s : arr) {
+        int min_len = strs[0].length();
+        for (String s : strs) {
             if (s.length() < min_len) {
                 min_len = s.length();
             }
         }
 
         for (int i = 0; i < min_len; i++) {
-            char nextCandidate = arr[0].charAt(i);
-            for (String s : arr) {
+            char nextCandidate = strs[0].charAt(i);
+            for (String s : strs) {
                 if (s.charAt(i) != nextCandidate) {
                     return result;
                 }
@@ -43,8 +44,14 @@ public class FindCommonPrefix {
         return result;
     }
 
-    //not mine
-    //O(S), where S is the sum of all characters in all strings.
+
+    /**
+     * No mine.
+     *
+     * @param strs array of strings to find prefix
+     * @return max common prefix
+     * @time O(s) where s is the sum of all characters in all strings
+     */
     private String longestCommonPrefix2(String[] strs) {
         if (strs.length == 0) {
             return "";
@@ -62,7 +69,7 @@ public class FindCommonPrefix {
 
     @Test
     public void test() {
-        String arr[] = new String[]{};
+        String[] arr = new String[]{};
         assertEquals("", longestCommonPrefix(arr));
 
         arr = new String[]{"", "", "", ""};
@@ -80,7 +87,7 @@ public class FindCommonPrefix {
 
     @Test
     public void test2() {
-        String arr[] = new String[]{};
+        String[] arr = new String[]{};
         assertEquals("", longestCommonPrefix2(arr));
 
         arr = new String[]{"", "", "", ""};

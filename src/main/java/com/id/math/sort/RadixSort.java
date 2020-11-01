@@ -29,7 +29,7 @@ public class RadixSort extends AbstractSort {
     }
 
     //Returns maximum value in arr[]
-    private static int getMax(int arr[], int n) {
+    private static int getMax(int[] arr, int n) {
         int result = arr[0];
         for (int i = 1; i < n; i++) {
             if (arr[i] > result) {
@@ -41,10 +41,10 @@ public class RadixSort extends AbstractSort {
 
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
-    static void countSort(int arr[], int n, int exp) {
+    static void countSort(int[] arr, int n, int exp) {
         final int BASE = 10;
-        int output[] = new int[n];
-        int count[] = new int[BASE]; //per 10-based numbers.
+        int[] output = new int[n];
+        int[] count = new int[BASE]; //per 10-based numbers.
         Arrays.fill(count, 0);
 
         int i;

@@ -23,8 +23,8 @@ import java.util.Stack;
  *
  * Output: [1, 2, 2, 2, 5] (items can be in any order)
  *
- *@time O(MxN)
- *@space O(MxN)
+ * @time O(m x n)
+ * @space O(m x n)
  *
  */
 public class RiverSize {

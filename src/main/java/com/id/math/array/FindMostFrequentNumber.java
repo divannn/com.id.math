@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class FindMostFrequentNumber {
 
-    private int find(int arr[]) {
+    private int find(int[] arr) {
         if (arr == null) {
             throw new IllegalArgumentException("invalid input");
         }
