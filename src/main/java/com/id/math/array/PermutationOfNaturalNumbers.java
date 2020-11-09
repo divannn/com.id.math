@@ -77,7 +77,7 @@ public class PermutationOfNaturalNumbers {
      * 1) sum of all elements of permutation = N*(N+1)/2
      * <p>
      * 2)  multiplication = N!
-     * It doesn't work!!! See test example proving that this method doesn;t work!
+     * It doesn't work!!! See test example proving that this method doesn't work!
      *
      * @time : O(n)
      * @space: O(1)
