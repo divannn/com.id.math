@@ -29,10 +29,12 @@ public class MergeSortedLists {
             }
             k++;
         }
+        //copy remaining items from 1st
         while (i < aL) {
             result[k] = a[i++];
             k++;
         }
+        //or from 2nd
         while (j < bL) {
             result[k] = b[j++];
             k++;
