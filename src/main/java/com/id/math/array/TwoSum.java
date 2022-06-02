@@ -8,19 +8,20 @@ import java.util.Map;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- * You have an unsorted array, and you are given a value S. Find first pair of elements in the array that add up to value S.
+ * You have an unsorted array, and you are given a value S. Find first a pair of elements in the array that add up to value S.
  */
 public class TwoSum {
 
     /**
      * Brute force
+     *
      * @time : O(n*n)
      * @space: O(1)
      */
     public int[] twoSum1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
-                if (nums[j] == target - nums[i]) {
+                if (nums[i] + nums[j] == target) {
                     return new int[]{i, j};
                 }
             }
@@ -30,6 +31,8 @@ public class TwoSum {
 
     /**
      * two-pass hash map
+     *
+     * @return array of indices
      * @time : O(n)
      * @space: O(n)
      */
@@ -50,6 +53,7 @@ public class TwoSum {
 
     /**
      * one-pass hash map
+     *
      * @time : O(n)
      * @space: O(n)
      */

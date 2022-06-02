@@ -18,6 +18,9 @@ public class IntPalindrome2 {
         if (value < 0) {
             return false;
         }
+        if (value < 10) {
+            return true;
+        }
         int n = value;
         int power = 1;//power of 10.
         while (n >= 10) {
@@ -26,7 +29,7 @@ public class IntPalindrome2 {
         }
 
         //check both ends of int - compare left digit and right digit.
-        while (value != 0) {
+        while (value >= 10) {
             int left = value / power;
             int right = value % 10;
             if (left != right) {
@@ -38,8 +41,7 @@ public class IntPalindrome2 {
         return true;
     }
 
-    //not mine
-    //problem - overflow may occur in reverse.
+    //not mine. problem - overflow may occur in reverse.
     public static boolean isPalindrome2(int value) {
         if (value < 0) {
             return false;
@@ -48,8 +50,9 @@ public class IntPalindrome2 {
     }
 
     @Test
-    public void test() {
+    public void test1() {
         assertFalse(isPalindrome(-10));
+        assertFalse(isPalindrome(10));
         assertTrue(isPalindrome(1));
         assertTrue(isPalindrome(0));
         assertTrue(isPalindrome(22));
@@ -60,6 +63,7 @@ public class IntPalindrome2 {
     @Test
     public void test2() {
         assertFalse(isPalindrome2(-10));
+        assertFalse(isPalindrome(10));
         assertTrue(isPalindrome2(1));
         assertTrue(isPalindrome2(0));
         assertTrue(isPalindrome2(22));

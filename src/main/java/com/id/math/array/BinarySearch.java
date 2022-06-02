@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class BinarySearch {
-
     public static int binarySearch(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;

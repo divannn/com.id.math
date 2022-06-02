@@ -1,29 +1,43 @@
 package com.id.math.array;
 
+import com.id.math.util.ArrayUtils;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.Assert.assertArrayEquals;
 
 /**
  * You have a set of players and their array of player ratings. Array size is even.
  * You need to find minimal bias.
+ *
  * @company hackerrank
  */
 public class MiminizeBias {
-    public static void main(String[] args) {
-        List<Integer> r = Arrays.asList(1, 3, 6, 6);
-        r.sort((a, b) -> a - b);
-        System.err.println(r);
+
+    public static int find(int[] scores) {
+        Arrays.sort(scores);
+        ArrayUtils.printArray(scores);
         int sum = 0;
-        for (int i = 0; i < r.size(); i = i + 2) {
-            sum = sum + (r.get(i) - r.get(i + 1));
+        for (int i = 0; i < scores.length; i = i + 2) {
+            sum += scores[i] - scores[i + 1];
         }
-        System.err.println(sum);
+        return sum;
+    }
+
+    @Test
+    public void test1() {
+        int[] scores = {1, 8, 6, 6};
+        int r = find(scores);
+        System.err.println(r);
+        Assert.assertEquals(-7, r);
+    }
+
+    @Test
+    public void test2() {
+        int[] scores = {1, 1, 2, 2};
+        int r = find(scores);
+        System.err.println(r);
+        Assert.assertEquals(0, r);
     }
 }
 
