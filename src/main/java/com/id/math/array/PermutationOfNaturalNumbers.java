@@ -2,6 +2,7 @@ package com.id.math.array;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class PermutationOfNaturalNumbers {
         Set<Integer> set = new HashSet<>();
         int max = Integer.MIN_VALUE;
         for (int num : nums) {
-            if (!set.add(num)) {
+            if (!set.add(num)) { //duplicate
                 return false;
             }
             max = Math.max(max, num);
@@ -72,6 +73,26 @@ public class PermutationOfNaturalNumbers {
     }
 
     /**
+     * Via sorting.
+     *
+     * @time : O(n*logn)
+     * @space: O(1)
+     */
+    private boolean viaSorting(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        Arrays.sort(nums);
+        int counter = 0;
+        for (int num : nums) {
+            if (num != ++counter) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * Via math. Idea is to check:
      * <p>
      * 1) sum of all elements of permutation = N*(N+1)/2
@@ -93,11 +114,11 @@ public class PermutationOfNaturalNumbers {
             mul *= num;
         }
 
-        int expectedMul =  1;
-        for (int i = 1; i <= nums.length;i++) {
+        int expectedMul = 1;
+        for (int i = 1; i <= nums.length; i++) {
             expectedMul *= i;//N!
         }
-        int expectedSum =  nums.length*(nums.length+1)/2;//N*(N+1)/2
+        int expectedSum = nums.length * (nums.length + 1) / 2;//N*(N+1)/2
         if (sum != expectedSum) {
             return false;
         }
@@ -129,11 +150,23 @@ public class PermutationOfNaturalNumbers {
     }
 
     @Test
+    public void testViaSorting() {
+        int[] arr = {1, 2, 2, 4, 3};
+        assertFalse(viaSorting(arr));
+        arr = new int[]{2, 2, 3};
+        assertFalse(viaSorting(arr));
+        arr = new int[]{1, 2, 6, 4, 3, 5};
+        assertTrue(viaSorting(arr));
+        arr = new int[]{1, 2, 4, 4, 4, 5, 7, 9, 9};
+        assertFalse(viaSorting(arr));
+    }
+
+    @Test
     public void testViaMath() {
         int[] arr = {1, 2, 3};
         assertTrue(viaMath(arr));
 
-        //!!DOESN'T WORK sum (45) and mul (362880) are equals to expectedQ
+        //!!DOESN'T WORK sum (45) and mul (362880) are equals to expected
         arr = new int[]{1, 2, 4, 4, 4, 5, 7, 9, 9};
         assertFalse(viaMath(arr));
     }
