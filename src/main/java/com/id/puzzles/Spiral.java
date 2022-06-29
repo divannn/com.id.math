@@ -1,7 +1,7 @@
 package com.id.puzzles;
 
 /**
- * Build NxN matrix containg spral spiral.
+ * Build NxN matrix containing spiral.
  * Example:
  * input = 4
  * <p>
@@ -11,14 +11,12 @@ package com.id.puzzles;
  * 11 16 15  6
  * 10  9  8  7
  *
- *
  * @company facebook
  */
 public class Spiral {
 
     /**
-     *
-     * @param n dimention of 2D matrix
+     * @param n dimension of 2D matrix
      * @return matrix with spiral
      */
     public static int[][] genSpiral(int n) {
