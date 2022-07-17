@@ -26,6 +26,8 @@ public class MaxPairProduct {
             if (max1 <= item) {
                 max2 = max1;//keep previous max.
                 max1 = item;
+            } else if (max2 < item) {
+                max2 = item;
             }
         }
         return max1 * max2;
@@ -41,22 +43,26 @@ public class MaxPairProduct {
         if (arr == null || arr.length < 2) {
             throw new RuntimeException("Invalid array");
         }
-        int max = Integer.MIN_VALUE;
-        int prevMax = Integer.MIN_VALUE;
+        int max1 = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
 
-        int min = Integer.MAX_VALUE;
-        int prevMin = Integer.MAX_VALUE;
+        int min1 = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
         for (int item : arr) {
-            if (max <= item) {
-                prevMax = max;//keep previous max.
-                max = item;
+            if (max1 < item) {
+                max2 = max1;//keep previous max1.
+                max1 = item;
+            } else if (max2 < item) {
+                max2 = item;
             }
-            if (min > item) {
-                prevMin = min;//keep previous min.
-                min = item;
+            if (min1 > item) {
+                min2 = min1;//keep previous min1.
+                min1 = item;
+            } else if (min2 > item) {
+                min2 = item;
             }
         }
-        return Math.max(min * prevMin, max * prevMax);//product of negatives can be more.
+        return Math.max(min1 * min2, max1 * max2);//product of negatives can be more.
     }
 
     @Test
