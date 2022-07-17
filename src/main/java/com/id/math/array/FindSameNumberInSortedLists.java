@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * You have three sorted arrays.
- * You need to find same element in all arrays(first found) or -1 if there are no same element.
+ * You need to find same element in all arrays (first found) or -1 if there is no same element.
  *
  * @company tin
  */

@@ -20,11 +20,11 @@ public class FindMostFrequentNumber {
         }
         int curr = 0;
         int counter = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int item : arr) {
             if (counter == 0) {
-                curr = arr[i];
+                curr = item;
                 counter++;
-            } else if (curr == arr[i]) {
+            } else if (curr == item) {
                 counter++;
             } else {
                 counter--;
@@ -36,7 +36,7 @@ public class FindMostFrequentNumber {
     @Test
     public void test() {
         int[] arr = {8, 8, 8, 8, 2, 3, 8, 8, 1, 3, 8, 3, 8, 8, 7, 8,};
-        //assertEquals(8, find(arr));
+        assertEquals(8, find(arr));
 
         int[] arr2 = {0, 2, 4, 7, 7, 7, 8, 9};
         assertEquals(7, find(arr2));
