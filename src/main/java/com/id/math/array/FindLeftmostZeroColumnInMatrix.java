@@ -1,9 +1,9 @@
 package com.id.math.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static com.id.math.array.BinarySearch.binarySearch;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Given a rectangular matrix M x N with rows formed of ones and zeroes which sorted in reverse order - find column index of leftmost zero.
@@ -67,14 +67,14 @@ public class FindLeftmostZeroColumnInMatrix {
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 0, 0},
         };
-        Assert.assertEquals(3, naive(m));
+        assertEquals(3, naive(m));
 
         int[][] m2 = {
                 {0, 0, 0},
                 {1, 0, 0},
                 {1, 1, 1}
         };
-        Assert.assertEquals(0, naive(m2));
+        assertEquals(0, naive(m2));
     }
 
     @Test
@@ -83,14 +83,14 @@ public class FindLeftmostZeroColumnInMatrix {
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 0, 0},
         };
-        Assert.assertEquals(3, find(m));
+        assertEquals(3, find(m));
 
         int[][] m2 = {
                 {0, 0, 0},
                 {1, 0, 0},
                 {1, 1, 1}
         };
-        Assert.assertEquals(0, find(m2));
+        assertEquals(0, find(m2));
     }
 
 }

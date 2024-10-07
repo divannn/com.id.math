@@ -1,18 +1,20 @@
 package com.id.math.array;
 
 import com.id.math.util.ArrayUtils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 
 public class ShuffleArray {
 
     /**
      * Shuffle array randomly in-place.
-     * @time  O(n)
+     *
+     * @time O(n)
      * @space O(1)
      */
     public static void shuffle(int[] array) {
@@ -26,7 +28,7 @@ public class ShuffleArray {
     @Test
     public void test() {
         int[] arr = {9, -2, 1, 0, 4, 5};
-        int [] copy = Arrays.copyOf(arr, arr.length);
+        int[] copy = Arrays.copyOf(arr, arr.length);
         ArrayUtils.printArray(arr);
         shuffle(copy);
         ArrayUtils.printArray(copy);

@@ -1,20 +1,22 @@
 package com.id.math.bits;
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class IntPalindrome {
 
-    /** Check if int is palindrome in terms of bits set.
+    /**
+     * Check if int is palindrome in terms of bits set.
      * Example for 4 bit int:
      * 1001 - palindrome
      * 1010 - not
      */
     public static boolean isPalindrome(int value) {
-        for (int i = 0, j = 31; i < 16 && j >=16; i++, j--) {
+        for (int i = 0, j = 31; i < 16 && j >= 16; i++, j--) {
             boolean isRightBitSet = (value & (1 << i)) != 0;
             boolean isLeftBitSet = (value & (1 << j)) != 0;
             if (isLeftBitSet != isRightBitSet) {
@@ -34,7 +36,7 @@ public class IntPalindrome {
     public static void main(String[] args) {
         System.err.println("AA " + to(1 << 0));
         System.err.println("AA " + to(1 << 1));
-        System.err.println("AA " + to(-1>> 2));
+        System.err.println("AA " + to(-1 >> 2));
         System.err.println("AA " + to(-1 >>> 2));
 
     }

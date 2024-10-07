@@ -1,8 +1,8 @@
 package com.id.math.array;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //leetcode
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array

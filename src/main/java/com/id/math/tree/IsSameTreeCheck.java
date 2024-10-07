@@ -1,7 +1,10 @@
 package com.id.math.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class IsSameTreeCheck {
 
@@ -32,14 +35,14 @@ public class IsSameTreeCheck {
     public void testEqual() {
         BinaryTreeNode<Integer> t1 = createTree();
         BinaryTreeNode<Integer> t2 = createTree();
-        Assert.assertTrue(isSameTree(t1, t2));
+        assertTrue(isSameTree(t1, t2));
     }
 
     @Test
     public void testNotEqual() {
         BinaryTreeNode<Integer> t1 = createTree();
         BinaryTreeNode<Integer> t2 = createTree2();
-        Assert.assertFalse(isSameTree(t1, t2));
+        assertFalse(isSameTree(t1, t2));
     }
 
     private static BinaryTreeNode<Integer> createTree() {

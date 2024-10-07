@@ -1,7 +1,9 @@
 package com.id.math.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * //leetcode
@@ -45,20 +47,20 @@ public class ReverseLinkedList {
 
     @Test
     public void testIterative1() {
-        Assert.assertEquals(null, ReverseLinkedList.reverseListIter(null));
+        assertEquals(null, ReverseLinkedList.reverseListIter(null));
 
         ListNode<Integer> original = new ListNode(1);
         ListNode<Integer> reversed = ReverseLinkedList.reverseListIter(original);
-        Assert.assertEquals("1", reversed.listToString());
+        assertEquals("1", reversed.listToString());
     }
 
     @Test
     public void testRecursive1() {
-        Assert.assertEquals(null, ReverseLinkedList.reverseListRecur(null));
+        assertEquals(null, ReverseLinkedList.reverseListRecur(null));
 
         ListNode<Integer> original = new ListNode(1);
         ListNode<Integer> reversed = ReverseLinkedList.reverseListRecur(original);
-        Assert.assertEquals("1", reversed.listToString());
+        assertEquals("1", reversed.listToString());
     }
 
     @Test
@@ -78,7 +80,7 @@ public class ReverseLinkedList {
         System.err.println(original_str);
         System.err.println(reversed_str);
 
-        Assert.assertEquals("4->3->2->1", reversed_str);
+        assertEquals("4->3->2->1", reversed_str);
     }
 
     @Test
@@ -98,7 +100,7 @@ public class ReverseLinkedList {
         System.err.println(original_str);
         System.err.println(reversed_str);
 
-        Assert.assertEquals("4->3->2->1", reversed_str);
+        assertEquals("4->3->2->1", reversed_str);
     }
 
 }

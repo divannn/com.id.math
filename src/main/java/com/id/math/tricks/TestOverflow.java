@@ -1,8 +1,8 @@
 package com.id.math.tricks;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestOverflow {
 
@@ -47,42 +47,42 @@ public class TestOverflow {
         assertEquals(-1, safeAdd(Integer.MAX_VALUE, -Integer.MIN_VALUE));
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testAddFail1() {
         safeAdd(Integer.MAX_VALUE, 1);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test()
     public void testAddFail2() {
         safeAdd(Integer.MAX_VALUE, Integer.MAX_VALUE);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testAddFail3() {
         safeAdd(Integer.MIN_VALUE, -1);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testAddFail4() {
         safeAdd(Integer.MIN_VALUE, Integer.MIN_VALUE);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testSubFail1() {
         safeSub(Integer.MAX_VALUE, -1);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testSubFail2() {
         safeSub(Integer.MAX_VALUE, -Integer.MAX_VALUE);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testSubFail3() {
         safeSub(Integer.MIN_VALUE, 1);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testSubFail4() {
         safeSub(Integer.MIN_VALUE, Integer.MAX_VALUE);
     }

@@ -1,7 +1,10 @@
 package com.id.math.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class IsValidBinarySearchTree {
 
@@ -29,12 +32,12 @@ public class IsValidBinarySearchTree {
 
     @Test
     public void testEqual() {
-        Assert.assertTrue(isValidBinarySearchTree(createTree()));
+        assertTrue(isValidBinarySearchTree(createTree()));
     }
 
     @Test
     public void testNotEqual() {
-        Assert.assertFalse(isValidBinarySearchTree(createTree2()));
+        assertFalse(isValidBinarySearchTree(createTree2()));
     }
 
     private static BinaryTreeNode<Integer> createTree() {

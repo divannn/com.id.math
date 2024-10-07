@@ -1,8 +1,8 @@
 package com.id.math.string;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Proper prefix of string S is beginning substring that shorter than S.

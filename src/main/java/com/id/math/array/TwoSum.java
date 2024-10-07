@@ -1,11 +1,11 @@
 package com.id.math.array;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * You have an unsorted array, and you are given a value S. Find first a pair of elements in the array that add up to value S.

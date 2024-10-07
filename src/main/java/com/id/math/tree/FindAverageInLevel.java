@@ -1,12 +1,14 @@
 package com.id.math.tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
@@ -54,8 +56,8 @@ public class FindAverageInLevel {
 
     @Test
     public void testEqual() {
-        Assert.assertEquals(Arrays.asList(44, 38, 36), findAverageInLevel(createTree()));
-        Assert.assertEquals(Arrays.asList(3, 3, 2), findAverageInLevel(createTree2()));
+        assertEquals(Arrays.asList(44, 38, 36), findAverageInLevel(createTree()));
+        assertEquals(Arrays.asList(3, 3, 2), findAverageInLevel(createTree2()));
     }
 
     private static BinaryTreeNode<Integer> createTree() {

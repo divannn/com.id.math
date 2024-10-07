@@ -1,7 +1,9 @@
 package com.id.math.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Given an array of integers find a maximum sum of a contiguous subarray of source array.
@@ -68,20 +70,20 @@ public class MaxSumOfContiguousSubarray {
 
     @Test
     public void testNaive() {
-        Assert.assertEquals(EXPECTED_1, naive(A1));
-        Assert.assertEquals(EXPECTED_2, naive(A2));
-        Assert.assertEquals(EXPECTED_3, naive(A3));
-        Assert.assertEquals(EXPECTED_4, naive(A4));
-        Assert.assertEquals(EXPECTED_5, naive(A5));
+        assertEquals(EXPECTED_1, naive(A1));
+        assertEquals(EXPECTED_2, naive(A2));
+        assertEquals(EXPECTED_3, naive(A3));
+        assertEquals(EXPECTED_4, naive(A4));
+        assertEquals(EXPECTED_5, naive(A5));
     }
 
     @Test
     public void testKadane() {
-        Assert.assertEquals(EXPECTED_1, kadane(A1));
-        Assert.assertEquals(EXPECTED_2, kadane(A2));
-        Assert.assertEquals(EXPECTED_3, kadane(A3));
-        Assert.assertEquals(EXPECTED_4, kadane(A4));
-        Assert.assertEquals(EXPECTED_5, kadane(A5));
+        assertEquals(EXPECTED_1, kadane(A1));
+        assertEquals(EXPECTED_2, kadane(A2));
+        assertEquals(EXPECTED_3, kadane(A3));
+        assertEquals(EXPECTED_4, kadane(A4));
+        assertEquals(EXPECTED_5, kadane(A5));
     }
 
 }

@@ -1,13 +1,14 @@
 package com.id.math.linkedlist;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class CheckCycle {
 
@@ -44,7 +45,7 @@ public class CheckCycle {
         return false;
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
         cycleHead = new ListNode<>(1);
         ListNode n2 = new ListNode<>(2);

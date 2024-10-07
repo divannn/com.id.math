@@ -1,8 +1,8 @@
 package com.id.math.numbers;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Least Common Multiple - Наименьшее общее кратное

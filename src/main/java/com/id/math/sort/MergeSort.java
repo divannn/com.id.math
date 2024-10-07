@@ -2,10 +2,11 @@ package com.id.math.sort;
 
 
 import com.id.math.util.ArrayUtils;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * @author idanilov
@@ -89,14 +90,14 @@ public class MergeSort extends AbstractSort {
     @Test
     public void test() {
         int[] source = {1, 1, 0, 0, 2, 2, 3, 0};
-        int [] copy = Arrays.copyOf(source, source.length);
+        int[] copy = Arrays.copyOf(source, source.length);
         ArrayUtils.printArray(source);
 
         int[] r = new MergeSort().sort(source);
         ArrayUtils.printArray(r);
 
         Arrays.sort(copy);
-        Assert.assertArrayEquals(copy, r);
+        assertArrayEquals(copy, r);
     }
 
 }

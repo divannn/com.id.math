@@ -1,8 +1,8 @@
 package com.id.math.sort;
 
 import com.id.math.util.ArrayUtils;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -13,7 +13,7 @@ public class CompareSortsTest {
     private int[] data;
     private static final int NUM = 5000;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         data = generate(NUM);
     }

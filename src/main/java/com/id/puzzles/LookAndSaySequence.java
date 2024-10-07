@@ -1,10 +1,12 @@
 package com.id.puzzles;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Generate of Nth item of "Look and Say" (aka "Count and Say") sequence:
+ * Generate Nth item of "Look and Say" (aka "Count and Say") sequence:
  * 1
  * 11
  * 21
@@ -56,15 +58,15 @@ public class LookAndSaySequence {
     @Test
     public void test() {
         String value = new LookAndSaySequence().genLookAndSaySequence(0);
-        Assert.assertEquals("1", value);
+        assertEquals("1", value);
 
         value = new LookAndSaySequence().genLookAndSaySequence(1);
-        Assert.assertEquals("11", value);
+        assertEquals("11", value);
 
         value = new LookAndSaySequence().genLookAndSaySequence(2);
-        Assert.assertEquals("21", value);
+        assertEquals("21", value);
 
         value = new LookAndSaySequence().genLookAndSaySequence(3);
-        Assert.assertEquals("1211", value);
+        assertEquals("1211", value);
     }
 }

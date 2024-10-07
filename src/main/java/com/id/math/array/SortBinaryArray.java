@@ -1,10 +1,11 @@
 package com.id.math.array;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 
 /**
  * Sort array containing only 1s and 0s
@@ -18,7 +19,7 @@ public class SortBinaryArray {
      * @time O(n)
      * @space O(1)
      */
-    public void sort1(int [] arr) {
+    public void sort1(int[] arr) {
         int N = arr.length;
         int sum = 0;
         int i;
@@ -37,7 +38,7 @@ public class SortBinaryArray {
      * @time O(n)
      * @space O(1)
      */
-    public void sort2(int [] arr) {
+    public void sort2(int[] arr) {
         int count = 0;
         int N = arr.length;
         for (int j : arr) {
@@ -57,7 +58,7 @@ public class SortBinaryArray {
      * @time O(n)
      * @space O(1)
      */
-    public void sort3(int [] arr) {
+    public void sort3(int[] arr) {
         int left = 0;
         int right = arr.length - 1;
 
@@ -83,8 +84,8 @@ public class SortBinaryArray {
 
     @Test
     public void test1() {
-        int [] arr = new int[]{0, 1, 0, 1, 1, 1, 0, 0, 1};
-        int [] copy = Arrays.copyOf(arr, arr.length);
+        int[] arr = new int[]{0, 1, 0, 1, 1, 1, 0, 0, 1};
+        int[] copy = Arrays.copyOf(arr, arr.length);
         sort1(arr);
         Arrays.sort(copy);
         assertArrayEquals(copy, arr);
@@ -93,8 +94,8 @@ public class SortBinaryArray {
 
     @Test
     public void test2() {
-        int [] arr = new int[]{0, 1, 0, 1, 1, 1, 0, 0, 1};
-        int [] copy = Arrays.copyOf(arr, arr.length);
+        int[] arr = new int[]{0, 1, 0, 1, 1, 1, 0, 0, 1};
+        int[] copy = Arrays.copyOf(arr, arr.length);
         sort2(arr);
         Arrays.sort(copy);
         assertArrayEquals(copy, arr);
@@ -103,8 +104,8 @@ public class SortBinaryArray {
 
     @Test
     public void test3() {
-        int [] arr = new int[]{0, 1, 0, 1, 1, 1, 0, 0, 1};
-        int [] copy = Arrays.copyOf(arr, arr.length);
+        int[] arr = new int[]{0, 1, 0, 1, 1, 1, 0, 0, 1};
+        int[] copy = Arrays.copyOf(arr, arr.length);
         sort3(arr);
         Arrays.sort(copy);
         assertArrayEquals(copy, arr);

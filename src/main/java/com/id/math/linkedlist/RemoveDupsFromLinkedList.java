@@ -1,9 +1,11 @@
 package com.id.math.linkedlist;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Remove duplicates from unordered linked list.
@@ -63,11 +65,11 @@ public class RemoveDupsFromLinkedList {
 
         System.err.println(original_str);
         System.err.println(new_str);
-        Assert.assertEquals("1->2->3->4", new_str);
+        assertEquals("1->2->3->4", new_str);
 
         ListNode newList2 = removeDups2(_1);
         String new_str2 = newList.listToString();
-        Assert.assertEquals("1->2->3->4", new_str2);
+        assertEquals("1->2->3->4", new_str2);
     }
 
     @Test
@@ -88,12 +90,12 @@ public class RemoveDupsFromLinkedList {
 
         System.err.println(original_str);
         System.err.println(new_str);
-        Assert.assertEquals("1->2->4", new_str);
+        assertEquals("1->2->4", new_str);
 
 
         ListNode newList2 = removeDups2(_1);
         String new_str2 = newList2.listToString();
-        Assert.assertEquals("1->2->4", new_str2);
+        assertEquals("1->2->4", new_str2);
     }
 
 }

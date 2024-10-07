@@ -1,7 +1,9 @@
 package com.id.math.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Given an array calculate new array of same size where each item in position i is multiplication of all elements in source array expect item i.
@@ -127,22 +129,22 @@ public class ProductOfArrayItems {
 
     @Test
     public void testNaive() {
-        Assert.assertArrayEquals(EXPECTED_A1, calculateSmart(A1));
-        Assert.assertArrayEquals(EXPECTED_A2, calculateNaive(A2));
-        Assert.assertArrayEquals(EXPECTED_A3, calculateNaive(A3));
+        assertArrayEquals(EXPECTED_A1, calculateSmart(A1));
+        assertArrayEquals(EXPECTED_A2, calculateNaive(A2));
+        assertArrayEquals(EXPECTED_A3, calculateNaive(A3));
     }
 
     @Test
     public void testCalculateViaDivision() {
-        Assert.assertArrayEquals(EXPECTED_A1, calculateSmart(A1));
-        Assert.assertArrayEquals(EXPECTED_A2, calculateViaDivision(A2));
-        Assert.assertArrayEquals(EXPECTED_A3, calculateViaDivision(A3));//will fail because of 0.
+        assertArrayEquals(EXPECTED_A1, calculateSmart(A1));
+        assertArrayEquals(EXPECTED_A2, calculateViaDivision(A2));
+        assertArrayEquals(EXPECTED_A3, calculateViaDivision(A3));//will fail because of 0.
     }
 
     @Test
     public void testCalculateSmart() {
-        Assert.assertArrayEquals(EXPECTED_A1, calculateSmart(A1));
-        Assert.assertArrayEquals(EXPECTED_A2, calculateSmart(A2));
-        Assert.assertArrayEquals(EXPECTED_A3, calculateSmart(A3));
+        assertArrayEquals(EXPECTED_A1, calculateSmart(A1));
+        assertArrayEquals(EXPECTED_A2, calculateSmart(A2));
+        assertArrayEquals(EXPECTED_A3, calculateSmart(A3));
     }
 }

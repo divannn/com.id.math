@@ -1,12 +1,11 @@
 package com.id.math.array;
 
 import com.id.math.util.ArrayUtils;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class MergeSortedLists {
 
@@ -50,6 +49,6 @@ public class MergeSortedLists {
         Arrays.sort(expected);
         int[] r = new MergeSortedLists().merge(arr1, arr2);
         ArrayUtils.printArray(r);
-        Assert.assertArrayEquals(expected, r);
+        assertArrayEquals(expected, r);
     }
 }

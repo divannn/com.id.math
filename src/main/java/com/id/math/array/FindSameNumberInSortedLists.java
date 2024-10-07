@@ -1,7 +1,9 @@
 package com.id.math.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * You have three sorted arrays.
@@ -40,7 +42,7 @@ public class FindSameNumberInSortedLists {
         int[] arr3 = {4};
         int r = new FindSameNumberInSortedLists().find(arr1, arr2, arr3);
         System.err.println(">>>" + r);
-        Assert.assertEquals(4, r);
+        assertEquals(4, r);
     }
 
     @Test
@@ -50,7 +52,7 @@ public class FindSameNumberInSortedLists {
         int[] arr3 = {6, 8, 9, 10, 13, 15};
         int r = new FindSameNumberInSortedLists().find(arr1, arr2, arr3);
         System.err.println(">>>" + r);
-        Assert.assertEquals(6, r);
+        assertEquals(6, r);
     }
 
     @Test
@@ -60,6 +62,6 @@ public class FindSameNumberInSortedLists {
         int[] arr3 = {5, 9};
         int r = new FindSameNumberInSortedLists().find(arr1, arr2, arr3);
         System.err.println(">>>" + r);
-        Assert.assertEquals(-1, r);
+        assertEquals(-1, r);
     }
 }

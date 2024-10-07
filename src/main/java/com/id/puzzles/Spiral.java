@@ -49,9 +49,9 @@ public class Spiral {
     public static void main(String[] args) {
         int[][] m = genSpiral(6);
 
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[i].length; j++) {
-                String item = String.format("%1$3s ", m[i][j]);
+        for (int[] ints : m) {
+            for (int anInt : ints) {
+                String item = String.format("%1$3s ", anInt);
                 System.err.print(item);
             }
             System.err.println();

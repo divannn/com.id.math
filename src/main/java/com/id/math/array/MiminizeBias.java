@@ -1,10 +1,12 @@
 package com.id.math.array;
 
 import com.id.math.util.ArrayUtils;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * You have a set of players and their array of player ratings. Array size is even.
@@ -29,7 +31,7 @@ public class MiminizeBias {
         int[] scores = {1, 8, 6, 6};
         int r = find(scores);
         System.err.println(r);
-        Assert.assertEquals(-7, r);
+        assertEquals(-7, r);
     }
 
     @Test
@@ -37,7 +39,7 @@ public class MiminizeBias {
         int[] scores = {1, 1, 2, 2};
         int r = find(scores);
         System.err.println(r);
-        Assert.assertEquals(0, r);
+        assertEquals(0, r);
     }
 }
 
