@@ -17,7 +17,7 @@
         <maven-javadoc-plugin.version>3.10.1</maven-javadoc-plugin.version>
 
         <jupiter.version>5.11.2</jupiter.version>
-        <assertj.version>3.26.3</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
     </properties>
 
     <dependencies>
